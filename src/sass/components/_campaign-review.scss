@@ -1,0 +1,46 @@
+.campaign-review{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background-color: $color_body;
+    .nav{
+        display: flex;
+        height: max-content;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+        border-bottom: 1px solid $color_border;
+        align-items: center;
+        background-color: white;
+        .col-1{
+            display: flex;
+            align-items: center;
+            .btn-back{
+                margin-right: 2rem;
+            }
+        }
+
+        .col-2{
+            display: flex;
+            align-items: center;
+            .btn-close{
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    &__container{
+        width: 50%;
+        margin: auto;
+        margin-top: 5rem;
+        text-align: center;
+        &--item{
+            margin: 2rem 0;
+            border: 1px solid $color_border_dark;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

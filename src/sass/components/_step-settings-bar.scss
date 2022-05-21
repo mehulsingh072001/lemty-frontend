@@ -1,0 +1,22 @@
+.settings-bar{
+    border-bottom: 1px solid rgba($color: $color_border_dark, $alpha: 1.5);
+
+    &__links{
+        list-style: none;
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+        text-align: center;
+        &--link{
+            justify-content: space-around;
+            cursor: pointer;
+            margin-right: 1rem;
+            &:hover{
+            }
+        }
+        .active{
+            color: $color_secondary;
+            border-bottom: 2px solid $color_secondary;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+.campaign-settings{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 4% repeat(11, 1fr);
+    &__container{
+        margin-top: 5rem;
+        height: 100vh;
+        grid-column: 2 / span 11;
+        &--name{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            background-color: white;
+            padding: 2rem 1.5rem;
+            margin: auto;
+            border-radius: 5px;
+            input{
+                margin-top: 1.5rem;
+                border-color: $color_border_dark;
+                border: 1px solid $color_border_dark;
+                background-color: transparent;
+                padding: .8rem 1rem;
+                border-radius: 4px;
+            }
+        }
+
+        &--settings{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            background-color: white;
+            margin: auto;
+            border-radius: 5px;
+            margin-top: 1rem;
+            padding: 2rem 1.5rem;
+            .timezone{
+                display: flex;
+                justify-content: space-between;
+                padding: 2rem 0;
+                align-items: center;
+                border-bottom: 1px solid $color_border_dark;
+                select{
+                    height: 32px;
+                    background-color: $color_body;
+                    border: 1px solid $color_border_dark;
+                }
+            }
+            .stop{
+                display: flex;
+                justify-content: space-between;
+            align-items: center;
+                width: 100%;
+                background-color: white;
+                margin: auto;
+                border-radius: 5px;
+                margin-top: 1rem;
+                padding: 2rem 0;
+            }
+        }
+    }
+}

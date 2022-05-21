@@ -1,0 +1,91 @@
+.email-settings{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 4% repeat(11, 1fr);
+    &__container{
+        margin-top: 5rem;
+        height: max-content;
+        grid-column: 2 / span 11;
+        display: flex;
+        &--sidebar{
+            grid-column: 2 / span 3;
+            width: max-content;
+            margin: 2rem 3rem;
+            .s-back{
+                background-color: white;
+                border: 1px solid #e1e1e3;
+                cursor: pointer;
+                padding: 0.6rem 1rem;
+                i{
+                    margin-right: .5rem;
+                }
+            }
+            ul{
+                width: max-content;
+                li{
+                    list-style: none;
+                    cursor: pointer;
+                    margin-top: 2rem;
+                    width: max-content;
+                    color: #66697c;
+                    transition: all .2s ease-in-out;
+                    &:hover{
+                        color: #3a6598;
+                        border-bottom: 1px solid #3a6598;
+                    }
+                }
+            }
+        }
+
+        &--content{
+            margin: 2rem 3rem;
+            display: grid;
+            grid-gap: 1rem;
+            width: 100%;
+            &--card{
+                border: 1px solid #e1e1e3;
+                background-color: white;
+                color: #393d55;
+                border-radius: 5px;
+                height: max-content;
+                padding: 2rem;
+                h4{
+                    margin-bottom: 1rem;
+                }
+                .row{
+                    display: flex;
+                    align-items: center;
+                    margin: 1rem 0;
+                    margin-top: 1.9rem;
+                    p{
+                        margin-left: 1rem;
+                    }
+                }
+                &--head{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                .creds__container{
+                    border: 1px solid $color_border_dark;
+                    margin: auto;
+                    margin-top: 2rem;
+                    width: 85%;
+                    padding: 2rem;
+                    input{
+                        padding: .6rem .5rem;
+                        margin-right: 1rem;
+                        border: 1px solid $color_border_dark;
+                        border-radius: 5px;
+                    }
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .editor-container{
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/btn";
+@import "components/toggle-switch";
+@import "components/campaign-steps";
+@import "components/email-editor";
+@import "components/step-settings";
+@import "components/step-settings-bar";
+@import "components/campaign-settings";
+@import "components/add-prospects";
+@import "components/upload";
+@import "components/new-prospect";
+@import "components/add-from-existing";
+@import "components/campaign-review";
+@import "components/create-list";
+@import "components/campaign-preview";
+@import "components/daygap-setter";
+@import "components/tooltip";
+@import "components/single-campaign-reports";
+@import "components/campaign-status";
+@import "components/placeholder-fields";
+@import "components/loader";
+@import "components/add-to-campaign";
+
+@import "layout/app-sidebar";
+@import "layout/campaign-sidebar";
+@import "layout/app-topbar";
+@import "layout/progress-bar";
+@import "layout/add-modal";
+@import "layout/prospect-sidebar";
+@import "layout/single-prospect";
+
+@import "pages/login";
+@import "pages/register";
+@import "pages/campaigns-home";
+@import "pages/prospects";
+@import "pages/user-settings";
+@import "pages/prospect-settings";
+@import "pages/settings";
+@import "pages/email-settings";
+@import "pages/single-campaign-navbar";
+@import "pages/single-campaign";
+@import "pages/deliveribility-settings";
+@import "pages/unsubscrib-confirmation";
+@import "pages/dashboard";
+@import "pages/single-campaign-settings";

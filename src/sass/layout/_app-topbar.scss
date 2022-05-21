@@ -1,0 +1,53 @@
+.app-topbar{
+    background-color: $color_body;
+    height: max-content;
+    padding: 1rem 0;
+    width: 96%;
+    position: absolute;
+    right: 0;
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem;
+        align-items: center;
+    }
+
+    &__options{
+        &--profile{
+            button{
+                border-radius: 50%;
+                height: max-content;
+                width: 3rem;
+                padding: .5rem;
+                border: none;
+                font-weight: 500;
+            }
+            .context-menu1{
+                position: fixed;
+                background-color: $color_body;
+                box-shadow: 0 0 2px rgba(0,0,0,.16),0 2px 4px rgba(8,12,43,.12);
+                right: 1%;
+                margin-top: 1rem;
+                &__content{
+                    display: flex;
+                    flex-direction: column;
+                    &--option{
+                        padding: 1.2rem 1.6rem;
+                        cursor: pointer;
+                        &:first-child{
+                            padding: 1.6rem;
+                            border-bottom: 1px solid $color_border_dark;
+                        }
+                        &:last-child{
+                            padding: 1.6rem;
+                            border-top: 1px solid $color_border_dark;
+                        }
+                        &:hover{
+                            background-color: #ebecee;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

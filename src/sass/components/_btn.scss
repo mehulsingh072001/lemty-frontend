@@ -1,0 +1,186 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .6rem .8rem;
+    cursor: pointer;
+    outline: none;
+    height: 3.2rem;
+    background-color: $color_primary_light;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+
+    &--disabled{
+        pointer-events: none;
+        opacity: .5;
+        height: 3.2rem;
+        padding: .6rem .8rem;
+        background-color: $color_primary_light;
+        border: 1px solid $color_primary;
+        border-radius: 4px;
+        cursor: default;
+    }
+
+    &:active{
+        background-color: #3739bd;
+        border: 1px solid #3739bd;
+    }
+
+    &-register{
+        background-color: $color_primary;
+        width: 40.7rem;
+        padding: 1.5rem 2rem;
+        text-align: center;
+        font-size: 1.563rem;
+        color: white;
+        text-decoration: none;
+        font-family: $font_body;
+        font-weight: 500;
+        border-radius: 9px;
+        border: 1px solid $color_primary_light;
+    }
+
+    &-sec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1rem;
+        padding: .6rem .8rem;
+        cursor: pointer;
+        outline: none;
+        height: 3.2rem;
+        background-color: $color_body_dark;
+        border: 1px solid $color_border_dark;
+        border-radius: 4px;
+        width: max-content;
+        i{
+            margin-left: 1rem;
+        }
+        &--disabled{
+            pointer-events: none;
+            opacity: .5;
+            height: 3.2rem;
+            padding: .6rem .8rem;
+            background-color: $color_body_dark;
+            border: 1px solid $color_border_dark;
+            border-radius: 4px;
+            cursor: default;
+        }
+    }
+
+    &-tertiary{
+        cursor: pointer;
+        background-color: transparent;
+        color: $color_primary_light;
+        border: none;
+        transition: .5s all;
+
+        &:hover{
+            border-bottom: 1px solid $color_primary_light;
+        }
+    }
+
+    &-white{
+        background-color: $color_body;
+        color: $color_text;
+        padding: .6rem;
+        border: 1px solid $color_border_dark;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover{
+            border: 1px solid #bababc;
+        }
+        &--disabled{
+            pointer-events: none;
+            opacity: .5;
+            padding: .6rem;
+            background-color: $color_body;
+            border: 1px solid $color_border_dark;
+            border-radius: 4px;
+            cursor: default;
+        }
+    }
+
+    &-add{
+        background-color: $color_primary_light;
+        font-size: 1.563rem;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        height: 3.5rem;
+        width: 3.5rem;
+        outline: none;
+        cursor: pointer;
+        &--sec{
+            color: $color_text;
+            background-color: white;
+            width: 3rem;
+            height: 3rem;
+            border: 2px solid $color_border_dark;
+            outline: none;
+            cursor: pointer;
+        }
+    }
+    &-close{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    &-back{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    &-simple{
+        color: $color_text;
+        cursor: pointer;
+        &:hover{
+            border-bottom: 1px solid $color_text;
+        }
+    }
+    &-contact{
+        font-size: 1.6rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        color: $color_text;
+        transition: all .2s;
+        &:hover{
+            color: $color_primary_light;
+        }
+        &--disabled {
+            font-size: 1.6rem;
+            margin-right: 1rem;
+            opacity: .3;
+        }
+    }
+    &-transparent{
+        font-size: 1.4rem;
+        font-weight: 600;
+        background-color: transparent;
+        border: 1px solid $color_border_dark;
+        color: $color_text;
+        padding: .5rem .8rem;
+        border-radius: 4px;
+        i{
+            margin-left: 1rem;
+        }
+    }
+    &-plain{
+        background-color: white;
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: $color_text;
+        padding: .5rem .8rem;
+        border: 1px solid $color_border_dark;
+        border-radius: 4px;
+    }
+    &-delete{
+        font-size: 1.4rem;
+        font-weight: 600;
+        background: none;
+        border: none;
+        color: #ef3621;
+        cursor: pointer;
+    }
+}

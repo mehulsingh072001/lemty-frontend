@@ -1,0 +1,82 @@
+.step-settings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .6);
+    z-index: 1;
+    &__modal{
+        padding: 2rem 2rem;
+        width: 35%;
+        height: 70%;
+        background-color: white;
+        &--btns{
+            display: flex;
+            justify-content: flex-end;
+            // margin-top: 60%;
+            button{
+                &:not(:last-child){
+                    margin-right: 1.6rem;
+                }
+            }
+        }
+        .window{
+            margin-top: 2rem;
+            height: 45rem;
+            &__form{
+                height: 100%;
+                &--container{
+                    display: flex;
+                    margin-top: 2rem;
+                    justify-content: space-around;
+                    align-items: center;
+                    select{
+                        background-color: white;
+                        border: 1px solid $color_border_dark;
+                        width: 30%;
+                        padding: .8rem 1rem;
+                    }
+                }
+            }
+        }
+
+        .days{
+            height: 45rem;
+            margin-top: 2rem;
+            &__form{
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 4rem;
+                justify-content: flex-start;
+                row-gap: 4rem;
+                &--field{
+                    display: flex;
+                    cursor: pointer;
+                    align-items: center;
+                    width: fit-content;
+                    label{
+                        cursor: pointer;
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+
+        .assign {
+            height: 45rem;
+            margin-top: 2rem;
+            &__form{
+                select {
+                    margin-top: 1.5rem;
+                    background-color: white;
+                    border: 1px solid $color_border_dark;
+                    padding: .8rem 1rem;
+                }
+            }
+        }
+    }
+}

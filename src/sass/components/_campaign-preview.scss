@@ -1,0 +1,116 @@
+.preview{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background-color: $color_body;
+    .nav{
+        display: flex;
+        height: max-content;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+        border-bottom: 1px solid $color_border_dark;
+        align-items: center;
+        background-color: white;
+        .col-1{
+            display: flex;
+            align-items: center;
+            .btn-back{
+                margin-right: 2rem;
+            }
+        }
+
+        .col-2{
+            display: flex;
+            align-items: center;
+            .btn-close{
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: 92%;
+        &--item{
+            border: 1px solid $color_border_dark;
+            margin: 2rem;
+            &:first-child{
+                width: 25%;
+                margin-right: 0rem;
+                .selector{
+                    padding: 2rem;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $color_body_dark;
+                    }
+                }
+                .active{
+                    background-color: $color_primary_accent;
+                }
+            }
+            &:last-child{
+                width: 75%;
+            }
+
+            .header{
+                border-bottom: 1px solid $color_border_dark;
+                width: 100%;
+                &__links{
+                    list-style: none;
+                    display: flex;
+                    column-gap: 2rem;
+                    cursor: pointer;
+                    margin-left: 2rem;
+                    &--link{
+                        padding: 1rem;
+                        width: max-content;
+                    }
+                    .copy__para--big{
+                        padding: 1rem;
+                    }
+                }
+                .active{
+                    color: $color_primary_light;
+                    border-bottom: 2px solid $color_primary_light;
+                }
+            }
+
+            .mail-body__container{
+                height: 100%;
+                display: grid;
+                grid-template-rows: repeat(3, max-content) 75% max-content;
+                padding: 2rem 0;
+                .row{
+                    display: flex;
+                    flex: 1 1;
+                }
+                &--item{
+                    display: flex;
+                    flex: 1 1;
+                    align-items: center;
+                    padding: 1rem 2rem;
+                    input{
+                        padding: .8rem;
+                        border: 1px solid $color_border_dark;
+                        border-radius: 4px;
+                        outline-color: red;
+                    }
+                    .tox-tinymce{
+                        flex: 1 1;
+                        height: 100% !important;
+                    }
+                }
+                .head{
+                    width: 10rem;
+                }
+                .para{
+                    display: flex;
+                    flex: 1 1;
+                }
+            }
+        }
+    }
+}

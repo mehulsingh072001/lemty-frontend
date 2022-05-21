@@ -1,0 +1,41 @@
+.dashboard{
+    overflow: hidden;
+    display: grid;
+
+    grid-template-columns: 4% repeat(11, 1fr);
+    &__container{
+        padding: 2rem;
+        margin-top: 5rem;
+        height: max-content;
+        grid-column: 2 / span 11;
+        display: flex;
+        &--left{
+            width: 40%;
+            display: grid;
+            grid-gap: 4rem;
+            &--data{
+                background-color: $color_body;
+                .topbar{
+                    padding: 2rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 1px solid $color_border_dark;
+                }
+                .data{
+                    display: flex;
+                    &__item{
+                        border-right: 1px solid $color_border_dark;
+                        width: 20%;
+                        padding: 2rem;
+                    }
+                }
+            }
+        }
+        &--right{
+            width: 60%;
+            margin-left: 3rem;
+            grid-column: 5 / span 11;
+        }
+    }
+}

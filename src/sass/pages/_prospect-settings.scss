@@ -1,0 +1,41 @@
+.prospect-settings{
+    overflow: hidden;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 4% repeat(11, 1fr);
+    &__container{
+        margin-top: 5rem;
+        height: max-content;
+        grid-column: 2 / span 11;
+        display: flex;
+        &--sidebar{
+            grid-column: 2 / span 3;
+            width: max-content;
+            margin: 2rem 3rem;
+            .s-back{
+                background-color: white;
+                border: 1px solid #e1e1e3;
+                cursor: pointer;
+                padding: 0.6rem 1rem;
+                i{
+                    margin-right: .5rem;
+                }
+            }
+            ul{
+                width: max-content;
+                li{
+                    list-style: none;
+                    cursor: pointer;
+                    margin-top: 2rem;
+                    width: max-content;
+                    color: #66697c;
+                    transition: all .2s ease-in-out;
+                    &:hover{
+                        color: #3a6598;
+                        border-bottom: 1px solid #3a6598;
+                    }
+                }
+            }
+        }
+    }
+}

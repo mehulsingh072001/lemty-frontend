@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    scrollbar-width: thin;
+    scrollbar-color: #b4b4b4 #919191;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px;
+    // @include respond(big-desktop)  {
+    //     font-size: 75%; //1rem = 12
+    // }
+    // @include respond(small-laptop)  {
+    //     font-size: 56.25%; //1rem = 9px
+    // }
+    // @include respond(tab-port)  {
+    //     font-size: 50%; //1rem = 8px
+    // }
+    // @include respond(big-phone)  {
+    //     font-size: 40%; //1rem = 8px
+    // }
+}
+
+body {
+    /* Total borders or paddings are not added to total height of an element */
+    box-sizing: border-box;
+    background-color: $color_body_dark;
+    font-family: $font_body;
+    .fa-file-csv{
+        color: #f49b32;
+    }
+    a{
+        text-decoration: none;
+        font: inherit;
+    }
+}

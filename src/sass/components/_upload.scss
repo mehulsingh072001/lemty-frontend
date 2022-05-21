@@ -1,0 +1,104 @@
+.upload{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+
+    .nav{
+        display: flex;
+        height: max-content;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+        border-bottom: 1px solid $color_border;
+        align-items: center;
+        .col-1{
+            display: flex;
+            align-items: center;
+            .btn-back{
+                margin-right: 2rem;
+            }
+            .import-head{
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .fa-file-csv{
+                    font-size: 1.953rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        .col-2{
+            display: flex;
+            align-items: center;
+            .btn-close{
+                margin-left: 2rem;
+            }
+        }
+    }
+
+    &-bar{
+        display: flex;
+        width: 55%;
+        justify-content: space-around;
+        margin: auto;
+        margin-top: 4rem;
+        align-items: center;
+        margin-bottom: 5rem;
+        &__item{
+            display: flex;
+            align-items: center;
+            .bullet{
+                height: 1rem;
+                margin-right: 1rem;
+                width: 1rem;
+                border: 1px solid grey;
+                border-radius: 50%;
+            }
+        }
+        .active{
+            .bullet{
+                padding: .2rem;
+                border: 5px solid $color_primary_light;
+            }
+        }
+    }
+
+    &__container{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+
+        .column{
+            max-height: 75%;
+            overflow: auto;
+            .column__form{
+                border: 1px solid $color_border_dark;
+                &--container{
+                    display: grid;
+                    grid-template-columns: repeat(2, 20%);
+                    grid-gap: 15rem;
+                    margin: 3rem 0;
+                    align-items: center;
+                    &:first-child{
+                        background-color: $color_border;
+                        margin: 0;
+                        padding: 2rem 2rem;
+                    }
+                    padding: 0 2rem;
+                    &--item{
+                        display: flex;
+                        .btn-sec, .btn-sec--disabled{
+                            margin-left: 1rem;
+                        }
+                    }
+                    select{
+                        background-color: $color_body;
+                        height: 3.2rem;
+                        border: 1.2px solid $color_border_dark;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.single-campaign{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 4% repeat(11, 1fr);
+    .save-discard{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        column-gap: 2rem;
+        padding: 2rem 4rem;
+    }
+    &__container{
+        margin-top: 5rem;
+        height: max-content;
+        grid-column: 2 / span 11;
+        display: flex;
+
+        &--content{
+            margin-top: 1rem;
+            width: 100%;
+
+        .timeline{
+            display: grid;
+            margin: auto;
+            width: 85%;
+            align-items: end;
+            grid-gap: 2rem;
+        }
+
+            .step-disabled{
+                .heading-2{
+                    text-decoration-line: line-through;
+                    font-size: 1.25rem;
+                    color: $color_text_light;
+                }
+                .row-1__right{
+                    display: none;
+                }
+                .delete-btn{
+                    display: block;
+                }
+            }
+            
+            &--steps{
+                display: grid;
+                background-color: white;
+                border-radius: 5px;
+                padding: 2rem;
+                width: 100%;
+                margin-top: 2rem;
+
+                .row-1{
+                    display: flex;
+                    border-bottom: 1px solid $color_border_dark;
+                    padding-bottom: 2rem;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &__right{
+                        display: flex;
+                        align-items: center;
+
+                        &--item{
+                            display: flex;
+                            column-gap: 1rem;
+                            &:not(:last-child){
+                                margin-right: 2rem;
+                                border: 1px solid $color_border_dark;
+                                padding: .5rem 1rem;
+                                color: $color_text;
+                            }
+                            p{
+                                width: max-content;
+                            }
+                        }
+                    }
+                }
+                .row-2{
+                    &__container{
+                        display: flex;
+                        border-bottom: 1px solid $color_border_dark;
+                        justify-content: space-between;
+                        padding: 2rem 0;
+                        align-items: center;
+                    }
+                    .btn-tertiary{
+                        margin: auto;
+                    }
+                    .email{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 50%;
+                        &__info{
+                            display: flex;
+                            width: 100%;
+                            column-gap: 2rem;
+                            margin-left: 4rem;
+                        }
+                        .head{
+                            margin-right: 2rem;
+                        }
+                    }
+                }
+                .row-3{
+                    display: flex;
+                    justify-content: end;
+                    padding-top: 2rem;
+                }
+            }
+        }
+    }
+}

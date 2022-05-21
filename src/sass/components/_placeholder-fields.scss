@@ -1,0 +1,78 @@
+.placeholder-fields{
+    position: fixed;
+    background-color: rgba($color: $color_text_light, $alpha: .5 );
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    &__modal{
+        display: grid;
+        background-color: $color_body;
+        height: 70%;
+        width: 40%;
+        border-radius: 4px;
+        &--heading{
+            margin: 1.5rem 3rem;
+        }
+        &--nav{
+            margin-top: 1rem;
+            border-bottom: 1px solid $color_border_dark;
+            ul{
+                display: flex;
+                margin: 0rem 3rem;
+                list-style: none;
+                li{
+                    padding: 1rem;
+                }
+                .active{
+                    border-bottom: 2px solid $color_primary_light;
+                    color: $color_primary_light;
+                }
+            }
+        }
+        &--search{
+            margin: 1.5rem 3rem;
+            padding: .5rem .8rem;
+            border: 1px solid $color_border_dark;
+            border-radius: 4px;
+            font-family: $font_body;
+            font-size: 1.4rem;
+            width: max-content;
+        }
+        &--fields{
+            overflow: auto;
+            height: 100%;
+            &--field{
+                padding: 1.5rem 0;
+                border-bottom: 1px solid $color_border;
+                font-size: 1.4rem;
+                font-weight: 400;
+                font-family: $font_body;
+                color: $color_text;
+                width: 100%;
+                &:hover{
+                    font-weight: 600;
+                    color: $color_primary_light;
+                }
+                p{
+                    margin: 0rem 3rem;
+                }
+            }
+            .selected{
+                background-color: $color_primary_accent;
+                color: $color_primary_light;
+                font-weight: 600;
+            }
+        }
+
+        &--actions{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            column-gap: 2rem;
+            margin: 1.5rem 3rem;
+        }
+    }
+}

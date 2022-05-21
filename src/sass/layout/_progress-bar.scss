@@ -1,0 +1,49 @@
+.progress-bar{
+    margin-bottom: 3rem;
+    &__container{
+        display: flex;
+        width: 70%;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+        &--progress{
+            display: flex;
+            align-items: center;
+            .bullet{
+                height: 1rem;
+                margin-right: 1rem;
+                width: 1rem;
+                border: 1px solid grey;
+                border-radius: 50%;
+            }
+        }
+    }
+
+
+    .btns{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 88%;
+
+        .btn-sec{
+            margin-right: 1rem;
+        }
+
+        .unactive{
+            display: none;
+        }
+    }
+
+    .active{
+        color: black;
+        .bullet{
+            padding: .2rem;
+            border: 5px solid $color_primary_light;
+        }
+    }
+    .unactive{
+    }
+}

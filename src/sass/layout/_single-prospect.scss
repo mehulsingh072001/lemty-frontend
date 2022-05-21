@@ -1,0 +1,154 @@
+.single-prospect{
+    height: 100vh;
+    width: 100%;
+    background-color: $color_text_light;
+    position: fixed;
+    z-index: 1;
+    &__modal{
+        width: 55%;
+        height: 100%;
+        background-color: $color_body;
+        position: absolute;
+        right: 0;
+        display: grid;
+        grid-template-rows: max-content 86.5% 6.5%;
+        overflow: auto;
+        &--topbar{
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            border: 1px solid $color_border_dark;
+            .close{
+                cursor: pointer;
+            }
+        }
+        &--container{
+            height: 100%;
+            display: flex;
+            &--fields{
+                width: 40%;
+                height: 100%;
+                border-right: 1px solid $color_border_dark;
+                &--topbar{
+                    height: 35%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .container{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 2rem;
+                        align-items: center;
+                        justify-content: center;
+                        height: 100%;
+                        .badge{
+                            font-size: 20px;
+                            font-weight: 500;
+                            background-color: #ffd57a;
+                            width: max-content;
+                            width: 4rem;
+                            height: 4rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 50%;
+                            border: 1px solid $color_border_dark;
+                        }
+                        .metadata, .metadata-actions{
+                            display: flex;
+                            column-gap: 2.4rem;
+                            align-items: center;
+                            button{
+                                background: none;
+                                border: none;
+                                color: $color_text;
+                                i{
+                                    font-size: 1.8rem;
+                                }
+                            }
+                        }
+                        .metadata-actions{
+                            button {
+                                background-color: $color_primary_accent;
+                                color: $color_primary_light;
+                                width: 4rem;
+                                height: 4rem;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+                    .nav{
+                        ul{
+                            display: flex;
+                            list-style: none;
+                            li{
+                                font-size: 1.4rem;
+                                color: $color_text_light;
+                                margin-left: 3rem;
+                                line-height: 20px;
+                                font-weight: 400;
+                                padding: 1rem;
+                                cursor: pointer;
+                            }
+                            .active{
+                                font-weight: 600;
+                                color: $color_primary_light;
+                                border-bottom: 2px solid $color_primary_light;
+                            }
+                        }
+                    }
+                }
+                &--items{
+                    &:hover{
+                        overflow: auto;
+                    }
+                    overflow: hidden;
+                    border-top: 1px solid $color_border_dark;
+                    height: 65%;
+                    padding: 2.4rem;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1.6rem;
+
+                    .item{
+                        display: flex;
+                        flex-direction: column;
+                        label{
+                            font-size: 1.4rem;
+                            font-family: $font_body;
+                            font-weight: 600;
+                            line-height: 20px;
+                            margin-bottom: .8rem;
+                            color: $color_text;
+                        }
+                        input{
+                            font-size: 1.4rem;
+                            font-weight: 400;
+                            font-family: $font_body;
+                            color: $color_text;
+                            padding: .8rem;
+                            height: 3.2rem;
+                            border-radius: 4px;
+                            border: 1px solid $color_border_dark;
+                        }
+                    }
+                }
+            }
+            &--history{
+                width: 60%;
+                &--topbar{
+                    height: 10%;
+                }
+            }
+        }
+        &--bottombar{
+            display: flex;
+            align-items: center;
+            border-top: 1px solid $color_border_dark;
+            justify-content: flex-end;
+            column-gap: 2rem;
+            padding: 0 1rem;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.status__dropdown {
+    .btn-sec{
+        i {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .fa-caret-down{
+            font-size: 1.4rem;
+        }
+    }
+    .active{
+        .fa-circle{
+            color: green !important;
+        }
+    }
+
+    .paused{
+        .fa-circle{
+            color: yellow;
+        }
+    }
+    &--container{
+        background-color: white;
+        padding: .5rem 1rem;
+        border: 1px solid $color_border_dark;
+        box-shadow: 0 0 2px rgba(0,0,0,.16),0 2px 4px rgba(8,12,43,.12);
+        margin-top: .4rem;
+        position: absolute;
+        p{
+            &:hover{
+                background: $color_border_dark;
+            }
+            padding-right: 26rem;
+        }
+    }
+}

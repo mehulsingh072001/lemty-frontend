@@ -1,0 +1,39 @@
+.campaigns-sidebar__container{
+    overflow: hidden;
+    &--sidebar{
+        background-color: $color_body;
+        grid-column: 2 / span 3;
+        height: 94vh;
+        margin-top: .5rem;
+        width: max-content;
+        padding: 0 2rem;
+        &__links{
+            position: relative;
+            top: 10%;
+            list-style: none;
+            &--link{
+                    display: flex;
+                    align-items: center;
+                    &:not(:first-child){
+                        margin-top: 2.5rem;
+                    }
+                    i{
+                        margin-right: 1rem;
+                    }
+                    padding: 1rem 2rem;
+                    border-radius: 5px;
+ 
+            }
+        }
+        .active{
+            color: $color_primary_light;
+            .campaigns-sidebar__container--sidebar__links--link{
+                background-color: rgba($color: $color_primary_accent, $alpha: 1);
+            }
+        }
+    }
+
+    &--content{
+        margin-top: 1rem;
+    }
+}

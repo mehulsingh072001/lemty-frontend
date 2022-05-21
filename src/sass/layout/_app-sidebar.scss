@@ -1,0 +1,39 @@
+.app-sidebar{
+    width: 4%;
+    padding: 2rem 0rem;
+    background-color: $color_primary;
+    height: 100vh;
+    position: fixed;
+    text-align: center;
+    &__logo{
+        width: 4rem;
+        height: 4rem;
+    }
+
+    &__links{
+        margin-top: 3.5rem;
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        &--link{
+            &:not(:first-child){
+                margin-top: 2.5rem;
+            }
+            a{
+                &:hover{
+                    background-color: rgba(243,240,255,.24);
+                    padding: 1rem 1.5rem;
+                    border-radius: 4px;
+                    transition: all .2s;
+                }
+            }
+        }
+    }
+    .active{
+        padding: 1rem 1.5rem;
+        background-color: $color_primary_light;
+        border-radius: 5px;
+    }
+}
