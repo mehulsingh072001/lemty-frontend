@@ -23,16 +23,11 @@ function SingleCampaignProspects() {
   const [pageNumber, setPageNumber] = useState(0)
   const [pageSize, setPageSize] = useState(10)
   const [prospectCounts, setProspectCounts] = useState({})
-  const[all, setAll] = useState(false)
-  const[notContacted, setNotContacted] = useState(false)
-  const[bounced, setBounced] = useState(false)
-  const[replied, setReplied] = useState(false)
-  const[unsubscribed, setUnsubscribed] = useState(false)
-  const[notReplied, setNotReplied] = useState(false)
+  const [status, setStatus] = useState("")
   const {id} = useParams()
 
   useEffect(() => {
-    getAllProspects()
+    getAllProspects("ALL")
     getProspectCounts()
   }, [])
 
@@ -46,7 +41,6 @@ function SingleCampaignProspects() {
 
   function nextPage() {
     if((pageNumber + 1) === totalPages){
-      console.log(totalPages)
     }
     else{
       setPageNumber(pageNumber + 1)
@@ -57,9 +51,10 @@ function SingleCampaignProspects() {
       "Authorization": `Bearer ${cookies.get('access_token')}`
   }
 
-  const getAllProspects = async () => {
+  const getAllProspects = async (status) => {
     const params = {
       campaignId: id,
+      status: status,
       page: pageNumber,
       size: pageSize
     }
@@ -68,172 +63,17 @@ function SingleCampaignProspects() {
       params: params
     }).then((res) => {
       if(res.data === ""){
-        console.log("Data Null")
       }
       else{
-        console.log(res.data)
         setTotalPages(res.data.totalPages)
         setTotalElements(res.data.totalElements)
         setProspects(res.data.prospectDatas)
-        setAll(true)
-        setNotContacted(false)
-        setBounced(false)
-        setReplied(false)
-        setUnsubscribed(false)
-        setNotReplied(false)
+        setStatus(status)
         setPageNumber(0)
         setPageSize(10)
       }
     })
   }
-
-  const getProspectsNotContacts = async () => {
-    const params = {
-      campaignId: id,
-      page: pageNumber,
-      size: pageSize
-    }
-    await axios.get('/prospects/prospect/campaign/not-contacted', {
-      headers: headers,
-      params: params
-    }).then((res) => {
-      if(res.data === ""){
-        console.log("Data Null")
-      }
-      else{
-        setTotalPages(res.data.totalPages)
-        setTotalElements(res.data.totalElements)
-        setProspects(res.data.prospects)
-        setAll(false)
-        setNotContacted(true)
-        setBounced(false)
-        setReplied(false)
-        setUnsubscribed(false)
-        setNotReplied(false)
-        setPageNumber(0)
-        setPageSize(10)
-      }
-    })
-  }
-
-  const getProspectsBounced = async () => {
-    const params = {
-      campaignId: id,
-      page: pageNumber,
-      size: pageSize
-    }
-    await axios.get('/prospects/prospect/campaign/bounced', {
-      headers: headers,
-      params: params
-    }).then((res) => {
-      if(res.data === ""){
-        console.log("Data Null")
-      }
-      else{
-        setTotalPages(res.data.totalPages)
-        setTotalElements(res.data.totalElements)
-        setProspects(res.data.prospects)
-        setAll(false)
-        setNotContacted(false)
-        setBounced(true)
-        setReplied(false)
-        setUnsubscribed(false)
-        setNotReplied(false)
-        setPageNumber(0)
-        setPageSize(10)
-      }
-    })
-  }
-
-  const getProspectsReplied = async () => {
-    const params = {
-      campaignId: id,
-      page: pageNumber,
-      size: pageSize
-    }
-    await axios.get('/prospects/prospect/campaign/replied', {
-      headers: headers,
-      params: params
-    }).then((res) => {
-      if(res.data === ""){
-        console.log("Data Null")
-      }
-      else{
-        setTotalPages(res.data.totalPages)
-        setTotalElements(res.data.totalElements)
-        setProspects(res.data.prospects)
-        setAll(false)
-        setNotContacted(false)
-        setBounced(false)
-        setReplied(true)
-        setUnsubscribed(false)
-        setNotReplied(false)
-        setPageNumber(0)
-        setPageSize(10)
-      }
-    })
-  }
-
-
-  const getProspectsUnsubscribed = async () => {
-    const params = {
-      campaignId: id,
-      page: pageNumber,
-      size: pageSize
-    }
-    await axios.get('/prospects/prospect/campaign/unsubscribed', {
-      headers: headers,
-      params: params
-    }).then((res) => {
-      if(res.data === ""){
-        console.log("Data Null")
-      }
-      else{
-        setTotalPages(res.data.totalPages)
-        setTotalElements(res.data.totalElements)
-        setProspects(res.data.prospects)
-        setAll(false)
-        setNotContacted(false)
-        setBounced(false)
-        setReplied(false)
-        setUnsubscribed(true)
-        setNotReplied(false)
-        setPageNumber(0)
-        setPageSize(10)
-      }
-    })
-  }
-
-  const getProspectsNotReplied = async () => {
-    const params = {
-      campaignId: id,
-      page: pageNumber,
-      size: pageSize
-    }
-    await axios.get('/prospects/prospect/campaign/not-replied', {
-      headers: headers,
-      params: params
-    }).then((res) => {
-      if(res.data === ""){
-        console.log("Data Null")
-      }
-      else{
-        setTotalPages(res.data.totalPages)
-        setTotalElements(res.data.totalElements)
-        setProspects(res.data.prospects)
-        setAll(false)
-        setNotContacted(false)
-        setBounced(false)
-        setReplied(false)
-        setUnsubscribed(false)
-        setNotReplied(true)
-        setPageNumber(0)
-        setPageSize(10)
-      }
-    })
-  }
-
-
 
 
   const getProspectCounts = async () => {
@@ -245,7 +85,6 @@ function SingleCampaignProspects() {
       params: params
     }).then((res) => {
       if(res.data === ""){
-        console.log("Data Null")
       }
       else{
         setProspectCounts(res.data)
@@ -309,29 +148,33 @@ function SingleCampaignProspects() {
               </div>
 
             <div className="prospects__container--sorter">
-              <div onClick={() => getAllProspects()} className={`prospects__container--sorter--card ${all ? "active" : ""}`}>
+              <div onClick={() => {getAllProspects("ALL")}} className={`prospects__container--sorter--card ${status === "ALL" ? "active" : ""}`}>
                 <h1 className="copy__para--medium">All</h1>
                 <p className="heading-1">{prospectCounts.all}</p>
               </div>
-              <div onClick={() => getProspectsNotContacts()} className={`prospects__container--sorter--card ${notContacted ? "active" : ""}`}>
-                <h1 className="copy__para--medium">Not Contacted</h1>
-                <p className="heading-1">{prospectCounts.not_contacted}</p>
+              <div onClick={() => {getAllProspects("IN_CAMPAIGN")}} className={`prospects__container--sorter--card ${status === "IN_CAMPAIGN" ? "active" : ""}`}>
+                <h1 className="copy__para--medium">In Campaign</h1>
+                <p className="heading-1">{prospectCounts.inCampaign}</p>
               </div>
-              <div onClick={() => getProspectsBounced()}  className={`prospects__container--sorter--card ${bounced ? "active" : ""}`}>
+              <div onClick={() => getAllProspects("COMPLETED_WITHOUT_REPLY")}  className={`prospects__container--sorter--card ${status === "COMPLETED_WITHOUT_REPLY" ? "active" : ""}`}>
+                <h1 className="copy__para--medium">Completed Without Reply</h1>
+                <p className="heading-1">{prospectCounts.completedWithoutReply}</p>
+              </div>
+              <div onClick={() => getAllProspects("BOUNCED")}  className={`prospects__container--sorter--card ${status === "BOUNCED" ? "active" : ""}`}>
                 <h1 className="copy__para--medium">Bounced</h1>
                 <p className="heading-1">{prospectCounts.bounced}</p>
               </div>
-              <div onClick={() => getProspectsReplied()} className={`prospects__container--sorter--card ${replied ? "active" : ""}`}>
+              <div onClick={() => getAllProspects("REPLIED")} className={`prospects__container--sorter--card ${status === "REPLIED" ? "active" : ""}`}>
                 <h1 className="copy__para--medium">Replied</h1>
                 <p className="heading-1">{prospectCounts.replied}</p>
               </div>
-              <div onClick={() => getProspectsUnsubscribed()} className={`prospects__container--sorter--card ${unsubscribed ? "active" : ""}`}>
+              <div onClick={() => getAllProspects("UNSUBSCRIBED")} className={`prospects__container--sorter--card ${status === "UNSUBSCRIBED" ? "active" : ""}`}>
                 <h1 className="copy__para--medium">Unsubscribed</h1>
                 <p className="heading-1">{prospectCounts.unsubscribed}</p>
               </div>
-              <div onClick={() => getProspectsNotReplied()} className={`prospects__container--sorter--card ${notReplied ? "active" : ""}`}>
-                <h1 className="copy__para--medium">Not Replied</h1>
-                <p className="heading-1">{prospectCounts.not_replied}</p>
+              <div onClick={() => getAllProspects("STOPPED")} className={`prospects__container--sorter--card ${status === "STOPPED" ? "active" : ""}`}>
+                <h1 className="copy__para--medium">Stopped</h1>
+                <p className="heading-1">{prospectCounts.stopped}</p>
               </div>
             </div>
 
