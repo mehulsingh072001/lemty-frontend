@@ -22,7 +22,6 @@ function SingleCampaignProspects() {
   const [totalPages, setTotalPages] = useState()
   const [pageNumber, setPageNumber] = useState(0)
   const [pageSize, setPageSize] = useState(10)
-  const [steps, setSteps] = useState([])
   const [prospectCounts, setProspectCounts] = useState({})
   const[all, setAll] = useState(false)
   const[notContacted, setNotContacted] = useState(false)
@@ -34,7 +33,6 @@ function SingleCampaignProspects() {
 
   useEffect(() => {
     getAllProspects()
-    getSteps()
     getProspectCounts()
   }, [])
 
@@ -58,16 +56,6 @@ function SingleCampaignProspects() {
   const headers = {
       "Authorization": `Bearer ${cookies.get('access_token')}`
   }
-
-  const getSteps = () => {
-    axios.get(`/steps/${id}`, {
-      headers: headers
-    }).then((res) => {
-      console.log(res.data)
-      setSteps(res.data)
-    })
-  }
-
 
   const getAllProspects = async () => {
     const params = {
@@ -413,22 +401,22 @@ function SingleCampaignProspects() {
                       <td><p className="col-data copy__para--medium">default</p></td>
                       <td><p className="col-data copy__para--medium">-</p></td>
                       <td><p className="col-data copy__para--medium">#{d.lastCompletedStep}</p></td>
-                      {/* <td> */}
-                      {/*   <div className="col-data__engagement"> */}
-                      {/*     { */}
-                      {/*     steps.map((d, i) => */} 
-                      {/*       <div key={i} className="col-data__engagement--container"> */}
-                      {/*         <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.replies === 0 || d.replies === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Reply: {d.replies}x</span></div> */}
-                      {/*         <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.clicks === 0 || d.clicks === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Click: {d.clicks}x</span></div> */}
-                      {/*         <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.opens === 0 || d.opens === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Open: {d.opens}x</span></div> */}
-                      {/*         <p className="copy__para--medium">{d.stepNumber}</p> */}
-                      {/*       </div> */}
-                      {/*      ) */}
-                      {/*     } */}
-                      {/*   </div> */}
-                      {/* </td> */}
-                      {/* <td><p className="col-data copy__para--medium">-</p></td> */}
-                      {/* <td><p className="col-data copy__para--medium">-</p></td> */}
+                      <td>
+                        <div className="col-data__engagement">
+                          {
+                          d.engagements.map((e, i) => 
+                            <div key={i} className="col-data__engagement--container">
+                              <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: e.replies === 0 || e.replies === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Reply: {e.replies}x</span></div>
+                              <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: e.clicks === 0 || e.clicks === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Click: {e.clicks}x</span></div>
+                              <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: e.opens === 0 || e.opens === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Open: {e.opens}x</span></div>
+                              <p className="copy__para--medium">{e.stepNumber}</p>
+                            </div>
+                           )
+                          }
+                        </div>
+                      </td>
+                      <td><p className="col-data copy__para--medium">-</p></td>
+                      <td><p className="col-data copy__para--medium">-</p></td>
                     </tr>
                   )}
                 </tbody>
