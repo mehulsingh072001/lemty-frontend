@@ -83,9 +83,10 @@ function SingleCampaignProspects() {
         console.log("Data Null")
       }
       else{
+        console.log(res.data)
         setTotalPages(res.data.totalPages)
         setTotalElements(res.data.totalElements)
-        setProspects(res.data.prospects)
+        setProspects(res.data.prospectDatas)
         setAll(true)
         setNotContacted(false)
         setBounced(false)
@@ -407,27 +408,27 @@ function SingleCampaignProspects() {
                   {prospects.map(d => 
                     <tr key={d.id}>
                       <td><input type="checkbox" value={d.id} checked={selectedProspects.includes(d.id)} onChange={handleSelectProspect}/></td>
-                      <td><p className="col-data copy__para--medium">{d.prospectEmail}</p></td>
-                      <td><p className="col-data copy__para--medium">{d.prospectMetadatas.length !== 0 ? d.prospectMetadatas[0]['status'] : null}</p></td>
+                      <td><p className="col-data copy__para--medium">{d.prospect.prospectEmail}</p></td>
+                      <td><p className="col-data copy__para--medium">{d.status}</p></td>
                       <td><p className="col-data copy__para--medium">default</p></td>
                       <td><p className="col-data copy__para--medium">-</p></td>
-                      <td><p className="col-data copy__para--medium">#{d.prospectMetadatas.length !== 0 ? d.prospectMetadatas[0]['lastCompletedStep'] : null}</p></td>
-                      <td>
-                        <div className="col-data__engagement">
-                          {
-                          steps.map((d, i) => 
-                            <div key={i} className="col-data__engagement--container">
-                              <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.replies === 0 || d.replies === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Reply: {d.replies}x</span></div>
-                              <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.clicks === 0 || d.clicks === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Click: {d.clicks}x</span></div>
-                              <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.opens === 0 || d.opens === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Open: {d.opens}x</span></div>
-                              <p className="copy__para--medium">{d.stepNumber}</p>
-                            </div>
-                           )
-                          }
-                        </div>
-                      </td>
-                      <td><p className="col-data copy__para--medium">-</p></td>
-                      <td><p className="col-data copy__para--medium">-</p></td>
+                      <td><p className="col-data copy__para--medium">#{d.lastCompletedStep}</p></td>
+                      {/* <td> */}
+                      {/*   <div className="col-data__engagement"> */}
+                      {/*     { */}
+                      {/*     steps.map((d, i) => */} 
+                      {/*       <div key={i} className="col-data__engagement--container"> */}
+                      {/*         <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.replies === 0 || d.replies === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Reply: {d.replies}x</span></div> */}
+                      {/*         <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.clicks === 0 || d.clicks === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Click: {d.clicks}x</span></div> */}
+                      {/*         <div className="col-data__engagement--container--item tooltip" style={{backgroundColor: d.opens === 0 || d.opens === undefined ? "#f3f9fe" : "#504ee4"}}><span className="tooltiptext">Open: {d.opens}x</span></div> */}
+                      {/*         <p className="copy__para--medium">{d.stepNumber}</p> */}
+                      {/*       </div> */}
+                      {/*      ) */}
+                      {/*     } */}
+                      {/*   </div> */}
+                      {/* </td> */}
+                      {/* <td><p className="col-data copy__para--medium">-</p></td> */}
+                      {/* <td><p className="col-data copy__para--medium">-</p></td> */}
                     </tr>
                   )}
                 </tbody>
