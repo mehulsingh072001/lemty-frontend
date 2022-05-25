@@ -1,17 +1,15 @@
 import axios from "axios"
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import Cookies from 'universal-cookie';
-import { GlobalContext } from "../../../GlobalProvider"
 
 const cookies = new Cookies()
 const WhichEmail = ({selectedEmail, setSelectedEmail}) => {
-  const {step} = useContext(GlobalContext)
-  const [addStep, setAddStep] = step
   const [creds, setCreds] = useState([])
   const userId = cookies.get("userId")
 
   useEffect(() => {
     getCreds()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const headers = {

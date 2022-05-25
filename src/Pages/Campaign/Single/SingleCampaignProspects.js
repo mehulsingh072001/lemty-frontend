@@ -15,8 +15,8 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies()
 function SingleCampaignProspects() {
   const [prospects, setProspects] = useState([])
-  const {addProspect, newProspect, upload, addProspectCampaign} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
+  const {addProspectCampaign} = useContext(GlobalContext)
+  const [campaignProspectAdd] = addProspectCampaign
   const [selectedProspects, setSelectedProspects] = useState([])
   const [totalElements, setTotalElements] = useState()
   const [totalPages, setTotalPages] = useState()
@@ -29,6 +29,7 @@ function SingleCampaignProspects() {
   useEffect(() => {
     getAllProspects("ALL")
     getProspectCounts()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function previousPage() {

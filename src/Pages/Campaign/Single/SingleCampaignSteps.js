@@ -9,8 +9,7 @@ import { useParams } from "react-router";
 import Cookies from 'universal-cookie';
 import ToggleSwitch from "../../../Components/ToggleSwitch";
 import { GlobalContext } from "../../../GlobalProvider";
-import { useContext } from "react";
-import {createBrowserHistory} from "history";
+import { useContext, useCallback } from "react";
 import StepSettingsModal from "../../../Components/CampaignComponents/StepSettings/Modal";
 import EditEditor from "../../../Components/EditEditor";
 import EmailEditor from "../../../Components/EmailEditor";
@@ -19,7 +18,7 @@ const cookies = new Cookies()
 function SingleCampaignSteps() {
   const { id } = useParams()
   const {addProspectCampaign, emailEditor} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
+  const [campaignProspectAdd] = addProspectCampaign
   const [steps, setSteps] = useState([])
   const [currentIndex, setCurrentIndex] = useState()
   const [modalOpen, setModalOpen] = useState(false)
@@ -30,21 +29,23 @@ function SingleCampaignSteps() {
   const [editor, setEditor] = emailEditor
   const [emailAdded, setEmailAdded] = useState(false)
 
-  useEffect(() => {
-    getSteps()
-  }, [])
-
   const headers = {
       "Authorization": `Bearer ${cookies.get('access_token')}`
   }
 
-  const getSteps = () => {
+  const getSteps = useCallback(() => {
     axios.get(`/steps/${id}`, {
       headers: headers
     }).then((res) => {
       setSteps(res.data)
     })
-  }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    getSteps()
+  }, [getSteps])
+
 
   const discard = () => {
     getSteps()

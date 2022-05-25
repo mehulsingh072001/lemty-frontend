@@ -24,7 +24,7 @@
             display: grid;
             margin: auto;
             width: 85%;
-            align-items: end;
+            align-items: flex-end;
             grid-gap: 2rem;
         }
 
@@ -105,7 +105,7 @@
                 }
                 .row-3{
                     display: flex;
-                    justify-content: end;
+                    justify-content: flex-end;
                     padding-top: 2rem;
                 }
             }

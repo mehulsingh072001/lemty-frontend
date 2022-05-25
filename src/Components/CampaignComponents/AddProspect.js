@@ -10,7 +10,7 @@ const AddProspect = (props) => {
   const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
 
   return(
-    <div class="campaign-prospects">
+    <div className="campaign-prospects">
       <AppSidebar/>
       {campaignProspectAdd===true ? <CampaignAdd/> : null}
       <AppTopbar title={"Campaigns"}/>

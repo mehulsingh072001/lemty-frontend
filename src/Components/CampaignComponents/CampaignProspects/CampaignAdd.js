@@ -27,7 +27,7 @@ function CampaignAdd(){
       {newP===true ? <CampaignProspectNew/> : null}
       {newUpload===true ? <Upload/> : console.log('null')}
       {addExistingModal===true ? <CampaignProspectsExisting/> : null}
-      <nav class="nav">
+      <nav className="nav">
         <h1 className="copy__para--big">Add Prospects</h1>
         <div>
           <button onClick={() => toggleAdd()} className="btn-close">&times;</button>
@@ -38,19 +38,19 @@ function CampaignAdd(){
         <h2 className="heading-1">How would you like to add Prospects?</h2>
 
         <button onClick={toggleUpload} className="add__container--card">
-          <i class="fas fa-file-csv"></i>
+          <i className="fas fa-file-csv"></i>
           <p>Upload CSV file</p>
-          <i class="fas fa-arrow-right"></i>
+          <i className="fas fa-arrow-right"></i>
         </button>
         <button onClick={toggleNew} className="add__container--card">
-          <i class="fas fa-user"></i>
+          <i className="fas fa-user"></i>
           <p>Create A New Prospect</p>
-          <i class="fas fa-arrow-right"></i>
+          <i className="fas fa-arrow-right"></i>
         </button>
         <button onClick={() => setAddExistingModal(!addExistingModal)} className="add__container--card">
-          <i class="fas fa-users"></i>
+          <i className="fas fa-users"></i>
           <p>Add Existing Prospect</p>
-          <i class="fas fa-arrow-right"></i>
+          <i className="fas fa-arrow-right"></i>
         </button>
       </div>
     </div>

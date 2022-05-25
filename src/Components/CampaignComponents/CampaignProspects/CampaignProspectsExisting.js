@@ -3,18 +3,16 @@ import { useState, useEffect, useContext } from "react"
 import { GlobalContext } from "../../../GlobalProvider";
 import Cookies from 'universal-cookie';
 import CampaignReview from "../CampaignReview";
-import {useParams} from "react-router"
 
 const cookies = new Cookies()
 function CampaignProspectsExisting() {
   const {addProspectCampaign, addExistingProspect, selectedCampaign, review} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
+  const [setCampaignProspectAdd] = addProspectCampaign
   const [addExistingModal, setAddExistingModal] = addExistingProspect
   const [prospects, setProspects] = useState([])
   const [selectedProspects, setSelectedProspects] = useState([])
-  const [campaignId, setCampaignId] = selectedCampaign
+  const [campaignId] = selectedCampaign
   const [reviewModal, setReviewModal] = review
-  const [prospectIds, setProspectIds] = useState([])
   const [totalElements, setTotalElements] = useState()
   const [totalPages, setTotalPages] = useState()
   const [pageNumber, setPageNumber] = useState(0)
@@ -22,6 +20,7 @@ function CampaignProspectsExisting() {
 
   useEffect(() => {
     getListData()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNumber, pageSize])
 
   function toggleReview(){
@@ -125,12 +124,12 @@ function CampaignProspectsExisting() {
 
             <div className="add-from-existing__container--page-size">
                 <p className="copy__para--medium">Showing</p>
-                <select onChange={(e) => setPageSize(e.target.value)}>
-                  <option selected={pageSize === 10 ? "selected" : ""} value="10">10</option>
-                  <option selected={pageSize === 20 ? "selected" : ""} value="20">20</option>
-                  <option selected={pageSize === 30 ? "selected" : ""} value="30">30</option>
-                  <option selected={pageSize === 50 ? "selected" : ""} value="50">50</option>
-                  <option selected={pageSize === 100 ? "selected" : ""} value="100">100</option>
+                <select value={pageSize} onChange={(e) => setPageSize(e.target.value)}>
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
                 </select>
                 <p className="copy__para--medium">/{totalElements}</p>
             </div>
@@ -150,8 +149,8 @@ function CampaignProspectsExisting() {
                 </thead>
 
                 <tbody>
-                  {prospects.map(d => 
-                    <tr key={d.id}>
+                  {prospects.map((d, i) => 
+                    <tr key={i}>
                       <input type="checkbox" value={d.id} checked={selectedProspects.includes(d.id)} onChange={handleSelectProspect}/>
                       <td><p className="col-data copy__para--medium">{d.firstName} {d.lastName}</p></td>
                       <td><p className="col-data copy__para--medium">
