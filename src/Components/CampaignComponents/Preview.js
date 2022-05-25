@@ -157,12 +157,7 @@ function Preview({selectedProspects, togglePreview, toggleHome, campaignId, setP
                   ],
                   toolbar_mode: "wrap",
                   toolbar:
-                    'fontselect fontsizeselect forecolor  \
-                    | bold italic underline \
-                    | alignleft aligncenter alignright alignjustify| \
-                    bullist numlist outdent indent \
-                    | table link image code \
-                    | emoticons ',
+                    'fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify| bullist numlist outdent indent | table link image code | emoticons ',
                   image_title: true,
                   automatic_uploads: true,
                   paste_data_images: true,
