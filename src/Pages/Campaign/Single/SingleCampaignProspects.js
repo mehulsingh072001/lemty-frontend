@@ -236,8 +236,8 @@ function SingleCampaignProspects() {
                 </thead>
 
                 <tbody>
-                  {prospects.map(d => 
-                    <tr key={d.id}>
+                  {prospects.map((d, index) => 
+                    <tr key={index}>
                       <td><input type="checkbox" value={d.id} checked={selectedProspects.includes(d.id)} onChange={handleSelectProspect}/></td>
                       <td><p className="col-data copy__para--medium">{d.prospect.prospectEmail}</p></td>
                       <td><p className="col-data copy__para--medium">{d.status}</p></td>

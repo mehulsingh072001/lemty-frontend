@@ -34,11 +34,11 @@ const WhichEmail = ({selectedEmail, setSelectedEmail}) => {
     <div className="assign">
       <h3 className="assign__heading">Email Sent from the selected email</h3>
       <form className="assign__form" action="">
-        <select id="" name="" onChange={(e) => setSelectedEmail(e.target.value)}>
+        <select value={selectedEmail} onChange={(e) => setSelectedEmail(e.target.value)}>
           <option value="">None</option>
           {
-            creds.map(d => 
-                <option selected={ d.email == selectedEmail ? "selected" : ""} value={d.email}>{d.email}</option>
+            creds.map((d, i) => 
+                <option key={i} value={d.email}>{d.email}</option>
             )
           }
         </select>

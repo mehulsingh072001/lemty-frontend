@@ -68,9 +68,9 @@ function DeliveribilitySettings(){
             <h4 className="heading-2">Email Interval</h4>
             <div className="deliveribility-settings__container--content--card--head">
               <p className="copy__para--big">Average interval between emails (in seconds)</p>
-              <select id="" name="" onChange={e => setSettings({...settings, emailInterval: e.target.value})}>
-                <option selected={settings.emailInterval === "random" ? "selected" : ""} value="random">Random</option>
-                <option selected={settings.emailInterval === "custom" ? "selected" : ""} value="custom">Custom</option>
+              <select id="" value={settings.emailInterval} name="" onChange={e => setSettings({...settings, emailInterval: e.target.value})}>
+                <option value="random">Random</option>
+                <option value="custom">Custom</option>
               </select>
             </div>
 
@@ -78,21 +78,21 @@ function DeliveribilitySettings(){
               <div className="row u-margin-top-medium">
                 <div className="field__container">
                   <label className="heading-4" htmlFor="">Minimum Interval</label>
-                  <input onChange={(e) => setSettings({...settings, minInterval: e.target.value})} value={settings.minInterval} type="number" />
+                  <input onChange={(e) => setSettings({...settings, minInterval: e.target.value})} defaultValue={settings.minInterval !== undefined ? settings.minInterval : null} type="number" />
                 </div>
                 <div className="field__container">
                   <label className="heading-4" htmlFor="">Maximum Interval</label>
-                  <input onChange={(e) => setSettings({...settings, maxInterval: e.target.value})} value={settings.maxInterval} type="number" />
+                  <input onChange={(e) => setSettings({...settings, maxInterval: e.target.value})} defaultValue={settings.maxInterval !== undefined ? settings.maxInterval : null} type="number" />
                 </div>
               </div> :
               <div className="row u-margin-top-medium">
                 <div className="field__container">
                   <label htmlFor="">No. of seconds</label>
-                  <input type="number" onChange={(e) => setSettings({...settings, seconds: e.target.value})} value={settings.seconds}/>
+                  <input type="number" onChange={(e) => setSettings({...settings, seconds: e.target.value})} defaultValue={settings.seconds !== undefined ? settings.seconds : null}/>
                 </div>
               </div>
             }
-      <button className="btn" onClick={() => updateSettings()}>Save</button>
+            <button className="btn" onClick={() => updateSettings()}>Save</button>
           </div>
 
           <div className="deliveribility-settings__container--content--card" id="timezone">

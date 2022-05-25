@@ -254,7 +254,7 @@ function SingleCampaignSteps() {
             }
             {
               edited ? 
-            <div class="save-discard">
+            <div className="save-discard">
               <button onClick={() => discard()} className="btn-sec">Discard</button>
               <button onClick={() => save()} className="btn">Save</button>
             </div>

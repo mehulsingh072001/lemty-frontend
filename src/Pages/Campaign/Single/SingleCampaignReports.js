@@ -122,16 +122,16 @@ function SingleCampaignReports() {
                 <div className="reports__metrics--header">
                   <h1 className="heading-1">Stepwise Metrics</h1>
                   <div className="reports__metrics--header--actions">
-                    <p className="heading-4"><ToggleSwitch/> View A/B test reports</p>
+                    <div className="heading-4"><ToggleSwitch/> View A/B test reports</div>
                     <button className="btn">Download</button>
                   </div>
                 </div>
 
                 {
                   stepMetrics.map((d, i) => 
-                <div className="reports__metrics--data">
+                <div key={i} className="reports__metrics--data">
                   <div className="info">
-                    <h1 className="heading-2"><i class="fas fa-envelope"></i> Step {d.stepNumber}</h1>
+                    <h1 className="heading-2"><i className="fas fa-envelope"></i> Step {d.stepNumber}</h1>
                     <div>
                       <p className="heading-3">{d.emails}</p>
                       <p className="heading-3">Email(s)</p>
@@ -141,7 +141,7 @@ function SingleCampaignReports() {
                     <div className="metrics__card">
                       <div className="metrics__card--top">
                         <p className="copy__para--medium">{d.opens} Opens</p>
-                        <i class="fas fa-eye"></i>
+                        <i className="fas fa-eye"></i>
                       </div>
                       <div className="metrics__card--progress">
                         <p>Percentage</p>
@@ -154,7 +154,7 @@ function SingleCampaignReports() {
                     <div className="metrics__card">
                       <div className="metrics__card--top">
                         <p className="copy__para--medium">{d.clicks} Clicks</p>
-                        <i class="fas fa-hand-pointer"></i>
+                        <i className="fas fa-hand-pointer"></i>
                       </div>
                       <div className="metrics__card--progress">
                         <p>Percentage</p>
@@ -167,7 +167,7 @@ function SingleCampaignReports() {
                     <div className="metrics__card">
                       <div className="metrics__card--top">
                         <p className="copy__para--medium">{d.replies} Replies</p>
-                        <i class="fas fa-reply"></i>
+                        <i className="fas fa-reply"></i>
                       </div>
                       <div className="metrics__card--progress">
                         <p>Percentage</p>
