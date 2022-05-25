@@ -9,7 +9,6 @@ function Login() {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
-    const url = 'http://localhost:8080'
     const data = {
       username: username,
       password: password

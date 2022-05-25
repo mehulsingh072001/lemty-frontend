@@ -1,11 +1,7 @@
 import AppSidebar from "../Components/Sidebars/AppSidebar"
 import AppTopbar from "../Components/Topbars/AppTopbar"
-import {useState, useEffect, useContext} from "react"
-import { GlobalContext } from "../GlobalProvider"
 
 function Dashboard(){
-  const {userData} = useContext(GlobalContext)
-
   return(
     <div className="dashboard">
       <AppSidebar/>

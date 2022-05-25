@@ -1,25 +1,24 @@
-import { useState, useContext, useEffect } from "react"
+import { useState } from "react"
 import StepSettingsBar from "./Bar"
 import Window from "./Window"
 import Days from "./Days"
 import WhichEmail from "./WhichEmail"
-import {GlobalContext} from "../../../GlobalProvider"
+// import {GlobalContext} from "../../../GlobalProvider"
 
 const StepSettingsModal = (props) => {
   const [progress, setProgress] = useState(1)
-  const {step} = useContext(GlobalContext)
   const [startHour, setStartHour] = useState(props.addStep[props.index]["startHour"])
   const [endHour, setEndHour] = useState(props.addStep[props.index]["endHour"])
   const [selectedDays, setSelectedDays] = useState(props.addStep[props.index]["days"]  !== null ? props.addStep[props.index]["days"] : ["MON","TUE","WED","THU","FRI","SAT","SUN"])
   const [selectedEmail, setSelectedEmail] = useState(props.addStep[props.index]["whichEmail"])
 
-  const prevStep = () => {
-    setProgress(progress!==0 ? progress - 1 : null)
-  }
+  // const prevStep = () => {
+  //   setProgress(progress!==0 ? progress - 1 : null)
+  // }
 
-  const nextStep = () => {
-    setProgress(progress!==5 ? progress + 1 : null)
-  }
+  // const nextStep = () => {
+  //   setProgress(progress!==5 ? progress + 1 : null)
+  // }
 
   const selectProgress = (number) => {
     setProgress(number)

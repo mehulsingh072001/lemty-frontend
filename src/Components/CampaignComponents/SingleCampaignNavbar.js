@@ -1,16 +1,14 @@
 import { NavLink } from "react-router-dom";
-import {useNavigate} from "react-router-dom"
 import { useParams } from "react-router";
-import {useContext, useState, useEffect} from "react"
+import {useContext, useEffect} from "react"
 
 import { GlobalContext } from "../../GlobalProvider"
 
 function SingleCampaignNavbar(){
-  let navigate = useNavigate()
   const { id } = useParams()
-  const {addProspect, newProspect, upload, addProspectCampaign, selectedCampaign} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign;
-  const [campaignId, setCampaignId] = selectedCampaign
+  const {addProspectCampaign, selectedCampaign} = useContext(GlobalContext)
+  const [setCampaignProspectAdd] = addProspectCampaign;
+  const [setCampaignId] = selectedCampaign
 
   useEffect(() => {
     setCampaignId(id)

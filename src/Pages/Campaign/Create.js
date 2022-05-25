@@ -1,4 +1,4 @@
-import {useState, useContext, useEffect} from 'react'
+import {useContext} from 'react'
 import CampaignSteps from '../../Components/CampaignComponents/CampaignSteps'
 import CampaignSettings from '../../Components/CampaignComponents/CampaignSettings'
 import AddProspect from '../../Components/CampaignComponents/AddProspect'
@@ -13,7 +13,7 @@ function Create(){
   const navigate = useNavigate()
   const {campaignBar, campaign, selectedCampaign, step} = useContext(GlobalContext)
   const [progress, setProgress] = campaignBar
-  const [campaignData, setCampaignData] = campaign
+  const [campaignData] = campaign
   const [campaignId, setCampaignId] = selectedCampaign
   const [addStep, setAddStep] = step
 

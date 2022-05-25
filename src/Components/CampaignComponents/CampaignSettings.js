@@ -123,6 +123,7 @@ const CampaignSettings = (props) => {
 
   useEffect(() => {
     handleChange()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const Timezones = timezones.map(Timezone => Timezone)

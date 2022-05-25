@@ -1,5 +1,4 @@
-import { useContext, useState } from "react"
-import { GlobalContext } from "../GlobalProvider"
+import { useState } from "react"
 import { Editor } from "@tinymce/tinymce-react"
 
 function EditEditor(props) {
@@ -51,12 +50,7 @@ function EditEditor(props) {
               ],
               toolbar_mode: "wrap",
               toolbar:
-                'fontselect fontsizeselect forecolor  \
-                | bold italic underline \
-                | alignleft aligncenter alignright alignjustify| \
-                bullist numlist outdent indent \
-                | table link image code \
-                | emoticons ',
+                "fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify| bullist numlist outdent indent | table link image code | emoticons | placeholderBtn",
               image_title: true,
               automatic_uploads: true,
               paste_data_images: true,

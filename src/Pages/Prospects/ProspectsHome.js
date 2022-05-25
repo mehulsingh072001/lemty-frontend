@@ -40,6 +40,7 @@ function ProspectsHome(){
   useEffect(() => {
     getData()
     getProspectCounts(selectedList.name, selectedList.id)
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedList, pageNumber, pageSize])
 
   const toggleProspectView = () => {

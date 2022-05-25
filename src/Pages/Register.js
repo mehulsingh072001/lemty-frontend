@@ -1,15 +1,11 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import axios from 'axios'
-import {GlobalContext} from '../GlobalProvider'
 
 function Register() {
   let navigate = useNavigate()
-  const [name, setName] = useState('')
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const {userData} = useContext(GlobalContext)
-  const [userDataModal, setUserDataModal] = userData
 
 
   const handleSubmit = async(e) => {

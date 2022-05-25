@@ -1,5 +1,3 @@
-import {useEffect} from "react"
-
 const DelayDropdown = ({index, day, stepNumber, steps, setStep}) => {
 
   const toggleDropdown = () => {

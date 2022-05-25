@@ -8,11 +8,11 @@ import Cookies from "universal-cookie"
 const cookies = new Cookies()
 function UserSettings(){
   let navigate = useNavigate()
-  const [selectedTimezone, selectTimezone] = useState('America/Los_Angeles')
+  const [selectTimezone] = useState('America/Los_Angeles')
   const [user, setUser] = useState({})
   const [firstName, setFirstName] = useState(Object.keys(user).length !== 0 ? user.firstName : "")
   const [lastName, setLastName] = useState(Object.keys(user).length !== 0 ? user.lastName : "")
-  const [timezones, setTimezones] = useState([
+  const [timezones] = useState([
     'America/Los_Angeles',
     'Africa/Accra',
     'Africa/Addis_Ababa',

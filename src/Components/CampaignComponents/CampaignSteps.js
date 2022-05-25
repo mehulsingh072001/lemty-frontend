@@ -13,7 +13,7 @@ import EditEditor from "../EditEditor";
 function CampaignSteps(props){
   const {emailEditor, campaign, step, selectedCampaign} = useContext(GlobalContext)
   const [editor, setEditor] = emailEditor
-  const [campaignId, setCampaignId] = selectedCampaign
+  const [setCampaignId] = selectedCampaign
   const [campaignData, setCampaignData] = campaign
   const [modalOpen, setModalOpen] = useState(false)
   const [editEditor, setEditEditor] = useState(false) 
@@ -23,13 +23,13 @@ function CampaignSteps(props){
   const [emailAdded, setEmailAdded] = useState(false)
   const [daySetter, setDaySetter] = useState(0)
   const [stepSetter, setStepSetter] = useState(0)
-  const [stepBtn, setBtn] = useState(true)
   const [plainEmail, setPlainEmail] = useState("")
-  const [edited, setEdited] = useState(false)
+  const [setEdited] = useState(false)
   const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
   useEffect(() => {
     initialStep()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function toggleEditor(index){

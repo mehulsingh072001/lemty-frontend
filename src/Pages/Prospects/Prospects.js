@@ -6,6 +6,7 @@ function Prospects(){
   let navigate = useNavigate()
   useEffect(() => {
     getUrl()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location])
 
   function getUrl() {

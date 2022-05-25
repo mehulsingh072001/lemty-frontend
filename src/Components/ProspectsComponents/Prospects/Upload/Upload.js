@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import axios from "axios"
 import Cookies from 'universal-cookie';
 import { GlobalContext } from "../../../../GlobalProvider";
@@ -7,11 +7,10 @@ import DragAndDrop from "./DragAndDrop";
 import UploadNav from "./UploadNav";
 import MapColumns from "./MapColumns";
 import AssignList from "./AssignList";
-import {useParams} from "react-router"
 
 const cookies = new Cookies();
 function Upload(){
-  const {addProspect, upload, selectedCampaign} = useContext(GlobalContext)
+  const {addProspect, upload} = useContext(GlobalContext)
   const [add, setAdd] = addProspect
   const [progress, setProgress] = useState(1)
   const [csvHeaders, setCsvHeaders] = useState(null)

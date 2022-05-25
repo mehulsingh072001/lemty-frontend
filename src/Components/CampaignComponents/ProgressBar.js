@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { GlobalContext } from '../../GlobalProvider'
 import { useNavigate } from "react-router"
 
 const ProgressBar = (props) => {
   let navigate = useNavigate()
   const {campaignBar, step} = useContext(GlobalContext)
-  const [progress, setProgress] = campaignBar
-  const [addStep, setAddStep] = step
+  const [progress] = campaignBar
+  const [addStep] = step
 
   const saveExit = () => {
     props.saveExit()

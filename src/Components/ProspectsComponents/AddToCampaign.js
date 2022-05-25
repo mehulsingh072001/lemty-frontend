@@ -7,7 +7,7 @@ import CampaignReview from "../CampaignComponents/CampaignReview";
 const cookies = new Cookies()
 const AddToCampaign = ({toggleAddTo, selectedProspects}) => {
   const {selectedCampaign} = useContext(GlobalContext)
-  const [campaignId, setCampaignId] = selectedCampaign
+  const [setCampaignId] = selectedCampaign
   const [campaigns, setCampaigns] = useState([])
   const [review, setReview] = useState(false)
 

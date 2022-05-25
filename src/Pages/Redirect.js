@@ -1,4 +1,4 @@
-import {useState, useEffect, useContext} from "react"
+import {useEffect, useContext} from "react"
 import Cookies from "universal-cookie"
 import axios from "axios"
 import { GlobalContext } from "../GlobalProvider"
@@ -7,9 +7,10 @@ const cookies = new Cookies();
 function Redirect() {
   useEffect(() => {
     submit()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const {userData} = useContext(GlobalContext)
-  const [userDataModal, setUserDataModal] = userData
+  const [setUserDataModal] = userData
 
   const submit = () => {
     var url_string = window.location.href

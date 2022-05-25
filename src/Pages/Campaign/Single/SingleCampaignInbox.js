@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import AppSidebar from "../../../Components/Sidebars/AppSidebar";
 import AppTopbar from "../../../Components/Topbars/AppTopbar"
 
@@ -12,7 +10,7 @@ import { useContext } from "react";
 
 function SingleCampaignInbox() {
   const {addProspectCampaign} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
+  const [campaignProspectAdd] = addProspectCampaign
   return(
     <div className="single-campaign">
       {campaignProspectAdd===true ? <CampaignAdd/> : console.log('null')}

@@ -3,12 +3,11 @@ import { GlobalContext } from "../../../GlobalProvider";
 import axios from "axios"
 import Cookies from 'universal-cookie';
 import CampaignReview from "../CampaignReview";
-import { useParams } from "react-router";
 
 const cookies = new Cookies()
 function CampaignProspectNew(){
   const {addProspectCampaign, newProspect, review} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
+  const [setCampaignProspectAdd] = addProspectCampaign
   const [newP, setNewP] = newProspect
   const [showLists, setShowLists] = useState([])
   const [list, setList] = useState('')

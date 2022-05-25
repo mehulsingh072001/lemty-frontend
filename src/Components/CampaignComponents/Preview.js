@@ -15,6 +15,7 @@ function Preview({selectedProspects, togglePreview, toggleHome, campaignId, setP
 
   useEffect(() => {
     generatePreview()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   const generatePreview = () => {

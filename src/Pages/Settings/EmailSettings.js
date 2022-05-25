@@ -1,7 +1,6 @@
 import AppSidebar from "../../Components/Sidebars/AppSidebar";
 import AppTopbar from "../../Components/Topbars/AppTopbar"
 import ToggleSwitch from "../../Components/ToggleSwitch";
-import { NavLink } from "react-router-dom";
 import {useNavigate} from "react-router-dom"
 import axios from "axios"
 import { useEffect, useState } from "react";
@@ -23,6 +22,7 @@ function EmailSettings() {
     getCreds();
     getSignatureServer();
     getUnsubServer();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const headers = {
@@ -279,12 +279,7 @@ function EmailSettings() {
                       ],
                       toolbar_mode: "wrap",
                       toolbar:
-                        'fontselect fontsizeselect forecolor  \
-                        | bold italic underline \
-                        | alignleft aligncenter alignright alignjustify| \
-                        bullist numlist outdent indent \
-                        | table link image code \
-                        | emoticons ',
+                          "fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify| bullist numlist outdent indent | table link image code | emoticons ",
                       image_title: true,
                       automatic_uploads: true,
                       paste_data_images: true,
@@ -312,12 +307,7 @@ function EmailSettings() {
                         ],
                         toolbar_mode: "wrap",
                         toolbar:
-                          'fontselect fontsizeselect forecolor  \
-                          | bold italic underline \
-                          | alignleft aligncenter alignright alignjustify| \
-                          bullist numlist outdent indent \
-                          | table link image code \
-                          | emoticons ',
+                          "fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify| bullist numlist outdent indent | table link image code | emoticons ",
                         image_title: true,
                         automatic_uploads: true,
                         paste_data_images: true,
@@ -362,12 +352,7 @@ function EmailSettings() {
                         ],
                         toolbar_mode: "wrap",
                         toolbar:
-                          'fontselect fontsizeselect forecolor  \
-                          | bold italic underline \
-                          | alignleft aligncenter alignright alignjustify| \
-                          bullist numlist outdent indent \
-                          | table link image code \
-                          | emoticons ',
+                          "fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify| bullist numlist outdent indent | table link image code | emoticons ",
                         image_title: true,
                         automatic_uploads: true,
                         paste_data_images: true,

@@ -2,7 +2,6 @@ import {useContext, useEffect, useState} from "react"
 import { GlobalContext } from "../../../GlobalProvider";
 import axios from "axios"
 import Cookies from 'universal-cookie';
-import { useParams } from "react-router";
 
 const cookies = new Cookies()
 function New(){

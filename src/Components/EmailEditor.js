@@ -66,12 +66,7 @@ function EmailEditor(props) {
               ],
               toolbar_mode: "wrap",
               toolbar:
-                'fontselect fontsizeselect forecolor  \
-                | bold italic underline \
-                | alignleft aligncenter alignright alignjustify| \
-                bullist numlist outdent indent \
-                | table link image code \
-                | emoticons | placeholderBtn ',
+                "fontselect fontsizeselect forecolor | bold italic underline | alignleft aligncenter alignright alignjustify| bullist numlist outdent indent | table link image code | emoticons | placeholderBtn",
               image_title: true,
               automatic_uploads: true,
               paste_data_images: true,

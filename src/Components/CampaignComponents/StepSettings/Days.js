@@ -1,6 +1,3 @@
-import { useState, useContext } from "react"
-import { GlobalContext } from "../../../GlobalProvider"
-
 const Days = ({selectedDays, setSelectedDays}) => {
 
   const handleSelectProspect = (e) => {

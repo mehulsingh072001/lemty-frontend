@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import axios from "axios"
 import Cookies from 'universal-cookie';
 import { GlobalContext } from "../../../../GlobalProvider";
@@ -11,8 +11,8 @@ import CampaignReview from "../../CampaignReview";
 
 const cookies = new Cookies();
 function Upload(){
-  const {addProspectCampaign, addProspect, upload, selectedCampaign, review} = useContext(GlobalContext)
-  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
+  const {addProspectCampaign, upload, review} = useContext(GlobalContext)
+  const [setCampaignProspectAdd] = addProspectCampaign
   const [progress, setProgress] = useState(1)
   const [csvHeaders, setCsvHeaders] = useState(null)
   const [prospectData, setProspectData] = useState([])
