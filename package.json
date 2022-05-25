@@ -47,5 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://192.168.194.167:8080/api"
+  "proxy": "https://sheltered-atoll-68849.herokuapp.com/api"
 }
