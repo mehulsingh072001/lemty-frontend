@@ -21,7 +21,6 @@ import SingleCampaignInbox from './Pages/Campaign/Single/SingleCampaignInbox';
 import SingleCampaignEmails from "./Pages/Campaign/Single/SingleCampaignEmails";
 import SingleCampaignReports from "./Pages/Campaign/Single/SingleCampaignReports"
 import SingleCampaignSettings from "./Pages/Campaign/Single/SingleCampaignSettings"
-import UnsubscribeConfirmation from './Pages/UnsubscribeConfirmation';
 import Redirect from './Pages/Redirect';
 
 
@@ -34,7 +33,6 @@ function App() {
           <Route exact path="/register" element={<Register/>}/>
           <Route exact path="/" element={<ProtectedRoute><Dashboard/></ProtectedRoute>}/>
           <Route exact path="/redirect" element={<Redirect/>}/>
-          <Route exact path="/unsubscribeConfirmation/:id" element={<UnsubscribeConfirmation/>}/>
 
           <Route  path="prospects/" element={<ProtectedRoute><Prospects/></ProtectedRoute>}>
             <Route path="home/"  element={<ProspectsHome/>}/>

@@ -16,7 +16,7 @@ const AddToCampaign = ({toggleAddTo, selectedProspects}) => {
   }, [])
   const getData = async () => {
     const userId = cookies.get("userId")
-    await axios.get(`/campaigns/${userId}`, {
+    await axios.get(`/api/campaigns/${userId}`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       }

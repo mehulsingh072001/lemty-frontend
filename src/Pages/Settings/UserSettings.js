@@ -131,7 +131,7 @@ function UserSettings(){
 
   const getUserData = () => {
     const userId = cookies.get("userId")
-    axios.get(`/users/${userId}`, {
+    axios.get(`/api/users/${userId}`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       }
@@ -145,7 +145,7 @@ function UserSettings(){
       firstName: firstName,
       lastName: lastName,
     }
-    axios.put(`/users/update/${cookies.get("userId")}`, data, {
+    axios.put(`/api/users/update/${cookies.get("userId")}`, data, {
       headers:{
         "Authorization": `Bearer ${cookies.get("access_token")}`
       }

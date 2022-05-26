@@ -29,7 +29,7 @@ function CampaignReview({selectedProspects, toggleHome, toggleReview}) {
       selectedCampaign: campaignId,
       startAt: x
     }
-    axios.post("/job/campaign/start", data, {
+    axios.post("/api/job/campaign/start", data, {
         headers: {
           "Authorization": `Bearer ${cookies.get('access_token')}`
         },

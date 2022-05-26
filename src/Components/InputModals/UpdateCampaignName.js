@@ -14,7 +14,7 @@ const UpdateCampaignName = ({campaignId, toggleUpdateName, getData}) => {
     const params = {
       campaignId: campaignId
     }
-    axios.put(`/campaigns/name`, data, {
+    axios.put(`/api/campaigns/name`, data, {
       headers:{
         "Authorization": `Bearer ${token}`
       },

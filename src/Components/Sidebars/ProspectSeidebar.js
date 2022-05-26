@@ -14,7 +14,7 @@ function ProspectSidebar({toggleCreateList, selectedList, setSelectedList}){
 
   const getListData = async () => {
     const userId = cookies.get("userId")
-    await axios.get(`/prospects/prospect_lists/list?userId=${userId}`, {
+    await axios.get(`/api/prospects/prospect_lists/list?userId=${userId}`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       }

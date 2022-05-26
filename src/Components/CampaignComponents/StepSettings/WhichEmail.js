@@ -20,7 +20,7 @@ const WhichEmail = ({selectedEmail, setSelectedEmail}) => {
     const params = {
       userId: userId
     }
-    axios.get(`/creds/`, {
+    axios.get(`/api/creds/`, {
       params : params,
       headers: headers
     }).then((res) => {

@@ -33,7 +33,7 @@ function EmailSettings() {
     const params = {
       userId: userId
     }
-    axios.get(`/creds/`, {
+    axios.get(`/api/creds/`, {
       params : params,
       headers: headers
     }).then((res) => {
@@ -42,7 +42,7 @@ function EmailSettings() {
   }
 
   const getSignatureServer = () => {
-    axios.get("/signature", {
+    axios.get("/api/signature", {
       params: {
         userId: userId
       },
@@ -59,7 +59,7 @@ function EmailSettings() {
     const data = {
       displayName: displayName
     }
-    axios.put("/creds/name", data, {
+    axios.put("/api/creds/name", data, {
       params: params,
       headers: headers
     }).then((res) => {
@@ -79,7 +79,7 @@ function EmailSettings() {
       signature: signature
     }
 
-    axios.post("/signature", data, {
+    axios.post("/api/signature", data, {
       headers: headers,
       params: params
     }).then((res) => {
@@ -90,7 +90,7 @@ function EmailSettings() {
   }
 
   const getUnsubServer = () => {
-    axios.get("/unsubscribe", {
+    axios.get("/api/unsubscribe", {
       params: {
         userId: userId
       },
@@ -109,7 +109,7 @@ function EmailSettings() {
     const data = {
       signature: signature
     }
-    axios.put("/signature/update", data, {
+    axios.put("/api/signature/update", data, {
       headers: headers,
       params: params
     }).then((res) => {
@@ -121,7 +121,7 @@ function EmailSettings() {
     const params = {
       signatureId: id
     }
-    axios.delete("/signature", {
+    axios.delete("/api/signature", {
       params: params,
       headers: headers
     }).then((res) => {
@@ -138,7 +138,7 @@ function EmailSettings() {
     const data = {
       body: unsubBody
     }
-    axios.post("/unsubscribe", data, {
+    axios.post("/api/unsubscribe", data, {
       headers: headers,
       params: params
     }).then((res) => {
@@ -155,7 +155,7 @@ function EmailSettings() {
     const data = {
       body: unsubBody
     }
-    axios.put("/unsubscribe", data, {
+    axios.put("/api/unsubscribe", data, {
       headers: headers,
       params: params
     }).then((res) => {
@@ -167,7 +167,7 @@ function EmailSettings() {
     const params = {
       unsubId: id
     }
-    axios.delete("/unsubscribe", {
+    axios.delete("/api/unsubscribe", {
       params: params,
       headers: headers
     }).then((res) => {
@@ -181,7 +181,7 @@ function EmailSettings() {
     const params = {
       credsId: credsId
     }
-    axios.delete('/creds/', {
+    axios.delete('/api/creds/', {
       params: params,
       headers: headers
     }).then((res) => {

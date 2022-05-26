@@ -25,7 +25,7 @@ function Preview({selectedProspects, togglePreview, toggleHome, campaignId, setP
       selectedCampaign: campaignId,
       startAt: x
     }
-    axios.post("/campaigns/generateProspectPreview", data, {
+    axios.post("/api/campaigns/generateProspectPreview", data, {
         headers: {
           "Authorization": `Bearer ${cookies.get('access_token')}`
         },
@@ -38,7 +38,7 @@ function Preview({selectedProspects, togglePreview, toggleHome, campaignId, setP
   }
 
   const campaignStart = () => {
-    axios.post("/job/campaign/preview-start", previews, {
+    axios.post("/api/job/campaign/preview-start", previews, {
         headers: {
           "Authorization": `Bearer ${cookies.get('access_token')}`
         },

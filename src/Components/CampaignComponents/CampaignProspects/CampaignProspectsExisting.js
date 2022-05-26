@@ -58,7 +58,7 @@ function CampaignProspectsExisting() {
       page: pageNumber,
       size: pageSize
     }
-    await axios.get(`/prospects/prospect/not-in-campaign/`, {
+    await axios.get(`/api/prospects/prospect/not-in-campaign/`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       },

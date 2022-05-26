@@ -17,7 +17,7 @@ function DeliveribilitySettings(){
 
   function getSettings() {
     const userId = cookies.get("userId")
-    axios.get('/deliveribility', {
+    axios.get('/api/deliveribility', {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       },
@@ -35,7 +35,7 @@ function DeliveribilitySettings(){
   }
 
   function updateSettings() {
-    axios.put('/deliveribility', settings, {
+    axios.put('/api/deliveribility', settings, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       },

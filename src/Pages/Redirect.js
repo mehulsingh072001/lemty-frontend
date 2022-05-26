@@ -17,7 +17,7 @@ function Redirect() {
     var url = new URL(url_string)
     var code = url.searchParams.get('code')
     // console.log(code)
-    axios.get("gmail/get-token/"+cookies.get("userId")+"?code="+code).then((res) => {
+    axios.get("/api/gmail/get-token/"+cookies.get("userId")+"?code="+code).then((res) => {
       console.log(res)
       if(res.status === 200){
         setUserDataModal(false)

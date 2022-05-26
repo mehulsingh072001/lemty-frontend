@@ -23,7 +23,7 @@ function AppTopbar(props){
 
   const getUser = () => {
     const userId = cookies.get("userId")
-    axios.get(`/users/${userId}`, {
+    axios.get(`/api/users/${userId}`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       }

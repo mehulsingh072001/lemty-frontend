@@ -30,7 +30,7 @@ function Create(){
       'Authorization': `Bearer ${cookies.get("access_token")}`
     }
     if(campaignId === ""){
-      axios.post(`/campaigns/${cookies.get("userId")}`, campaignData, {headers: headers}).then((res) => {
+      axios.post(`/api/campaigns/${cookies.get("userId")}`, campaignData, {headers: headers}).then((res) => {
         if(res.status===201){
           setAddStep([])
           setProgress(0)
@@ -40,7 +40,7 @@ function Create(){
       })
     }
     else {
-      axios.put(`/campaigns/${campaignId}`, campaignData, {headers: headers}).then((res) => {
+      axios.put(`/api/campaigns/${campaignId}`, campaignData, {headers: headers}).then((res) => {
         if(res.status===200){
           setAddStep([])
           setProgress(0)

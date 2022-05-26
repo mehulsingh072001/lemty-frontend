@@ -32,7 +32,7 @@ function SingleCampaignReports() {
   }
 
   const getOverviewData = () => {
-    axios.get(`/reports/overview`, {
+    axios.get(`/api/reports/overview`, {
       headers: headers,
       params: {
         campaignId: id
@@ -45,7 +45,7 @@ function SingleCampaignReports() {
   }
 
   const getStepMetrics = () => {
-    axios.get(`/reports/steps`, {
+    axios.get(`/api/reports/steps`, {
       headers: headers,
       params: {
         campaignId: id

@@ -34,7 +34,7 @@ function SingleCampaignSteps() {
   }
 
   const getSteps = useCallback(() => {
-    axios.get(`/steps/${id}`, {
+    axios.get(`/api/steps/${id}`, {
       headers: headers
     }).then((res) => {
       setSteps(res.data)
@@ -60,7 +60,7 @@ function SingleCampaignSteps() {
     const params = {
       campaignId: id
     }
-    axios.put(`/campaigns/steps`, data, {
+    axios.put(`/api/campaigns/steps`, data, {
       headers:{
         "Authorization": `Bearer ${token}`
       },

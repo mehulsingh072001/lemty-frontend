@@ -12,7 +12,7 @@ function PasswordUpdate({togglePasswordUpdate}){
     const data = {
       password: password
     }
-    axios.put(`/users/update/${userId}`, data, {
+    axios.put(`/api/users/update/${userId}`, data, {
       headers:{
         "Authorization": `Bearer ${token}`
       }

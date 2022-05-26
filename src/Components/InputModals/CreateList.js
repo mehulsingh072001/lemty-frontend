@@ -12,7 +12,7 @@ function CreateList({toggleCreateList}){
     const data = {
       name: name
     }
-    axios.post(`/prospects/prospect_lists/${userId}`, data, {
+    axios.post(`/api/prospects/prospect_lists/${userId}`, data, {
       headers:{
         "Authorization": `Bearer ${token}`
       }

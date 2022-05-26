@@ -138,7 +138,7 @@ function SingleCampaignSettings() {
   }, [])
 
   const getCampaignSettings = () => {
-    axios.get(`/campaigns/single/${id}`, {
+    axios.get(`/api/campaigns/single/${id}`, {
       headers: headers
     }).then((res) => {
       setCampaign(res.data)

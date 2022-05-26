@@ -14,7 +14,7 @@ const CampaignStatus = ({campaign, getData, index, openMenu}) => {
   }
 
   const pauseCampaign = () => {
-    axios.get("/campaigns/pause", {
+    axios.get("/api/campaigns/pause", {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       },
@@ -29,7 +29,7 @@ const CampaignStatus = ({campaign, getData, index, openMenu}) => {
   }
 
   const resumeCampaign = () => {
-    axios.get("/campaigns/resume", {
+    axios.get("/api/campaigns/resume", {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       },

@@ -71,7 +71,7 @@ function ProspectsHome(){
     setStatus("all")
     const userId = cookies.get("userId")
     if(name === "all"){
-      await axios.get("/prospects/prospect/user", {
+      await axios.get("/api/prospects/prospect/user", {
         headers: {
           "Authorization": `Bearer ${cookies.get('access_token')}`
         },
@@ -93,7 +93,7 @@ function ProspectsHome(){
       })
     }
     else{
-      await axios.get(`/prospects/prospect/${id}`, {
+      await axios.get(`/api/prospects/prospect/${id}`, {
         headers: {
           "Authorization": `Bearer ${cookies.get('access_token')}`
         },
@@ -119,7 +119,7 @@ function ProspectsHome(){
     setStatus(status)
     if(selectedList.name === "all"){
       const userId = cookies.get("userId")
-      await axios.get("/prospects/prospect/user/status", {
+      await axios.get("/api/prospects/prospect/user/status", {
           headers: {
             "Authorization": `Bearer ${cookies.get('access_token')}`
           },
@@ -137,7 +137,7 @@ function ProspectsHome(){
       })
     }
     else{
-      await axios.get(`/prospects/prospect/${selectedList.id}/status`, {
+      await axios.get(`/api/prospects/prospect/${selectedList.id}/status`, {
           headers: {
             "Authorization": `Bearer ${cookies.get('access_token')}`
           },
@@ -158,7 +158,7 @@ function ProspectsHome(){
   const getProspectCounts = async (listName, listId) => {
     if(listName === "all"){
       const userId = cookies.get("userId")
-      await axios.get(`/prospects/prospect/user/${userId}/count`, {
+      await axios.get(`/api/prospects/prospect/user/${userId}/count`, {
           headers: {
             "Authorization": `Bearer ${cookies.get('access_token')}`
           },
@@ -167,7 +167,7 @@ function ProspectsHome(){
       })
     }
     else{
-      await axios.get(`/prospects/prospect/${listId}/count`, {
+      await axios.get(`/api/prospects/prospect/${listId}/count`, {
           headers: {
             "Authorization": `Bearer ${cookies.get('access_token')}`
           },
@@ -179,7 +179,7 @@ function ProspectsHome(){
 
 
   const deleteProspects = () => {
-    axios.post("/prospects/prospect/deleteAll", selectedProspects, {
+    axios.post("/api/prospects/prospect/deleteAll", selectedProspects, {
         headers: {
           "Authorization": `Bearer ${cookies.get('access_token')}`
         },

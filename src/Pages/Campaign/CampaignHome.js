@@ -45,7 +45,7 @@ function CampaignsHome() {
 
   const getData = async () => {
     const userId = cookies.get("userId")
-    await axios.get(`/campaigns/${userId}`, {
+    await axios.get(`/api/campaigns/${userId}`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       }
@@ -61,7 +61,7 @@ function CampaignsHome() {
   }
 
   const deleteCampaign = (id, index) => {
-    axios.delete(`/campaigns/${id}`, {
+    axios.delete(`/api/campaigns/${id}`, {
       headers: {
         "Authorization": `Bearer ${cookies.get('access_token')}`
       }

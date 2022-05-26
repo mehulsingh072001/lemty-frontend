@@ -59,7 +59,7 @@ function SingleCampaignProspects() {
       page: pageNumber,
       size: pageSize
     }
-    await axios.get(`/prospects/prospect/campaign`, {
+    await axios.get(`/api/prospects/prospect/campaign`, {
       headers: headers,
       params: params
     }).then((res) => {
@@ -81,7 +81,7 @@ function SingleCampaignProspects() {
     const params = {
       campaignId: id
     }
-    await axios.get(`/prospects/prospect/campaign/counts`, {
+    await axios.get(`/api/prospects/prospect/campaign/counts`, {
       headers: headers,
       params: params
     }).then((res) => {

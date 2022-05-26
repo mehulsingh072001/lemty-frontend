@@ -29,7 +29,7 @@ function Upload(){
     let data = new FormData()
     setFile(f)
     data.append('file', f)
-    axios.post("/csv/getCsvHeaders", data, {
+    axios.post("/api/csv/getCsvHeaders", data, {
       headers: {
         "Content-Type": "multipart/form-data",
         "Authorization": `Bearer ${token}`
