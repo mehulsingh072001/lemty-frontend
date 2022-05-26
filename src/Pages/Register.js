@@ -19,7 +19,7 @@ function Register() {
       'Accept': 'application/json'
     }
     try {
-      await axios.post('/register', data, headers).then((res) => {
+      await axios.post('/api/register', data, headers).then((res) => {
         if(res.status===201){
           navigate('/login')
         }
