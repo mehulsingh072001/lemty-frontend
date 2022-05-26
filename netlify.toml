@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/api/*"
+  from = "/*"
   to = "https://sheltered-atoll-68849.herokuapp.com/api/:splat"
   status = 200
   force = true
