@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 import Cookies from 'universal-cookie';
+import SuccessfullUpload from "./SuccessfullUpload";
 
 const cookies = new Cookies()
 const AssignList = (props) => {
   const [showLists, setShowLists] = useState([])
+  const [uploadSucess, setUploadSuccess] = useState(false)
 
   useEffect(() => {
     getListData()
@@ -24,6 +26,8 @@ const AssignList = (props) => {
 
   return (
     <div>
+      <SuccessfullUpload/>
+      {/* {uploadSucess ? <SuccessfullUpload/> : null} */}
       <form action="">
         <div className="input-block">
           <select onChange={(e) => props.setList(e.target.value)} id="" name="prospect-list">
