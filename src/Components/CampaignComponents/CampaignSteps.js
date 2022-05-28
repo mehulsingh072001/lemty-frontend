@@ -13,7 +13,7 @@ import EditEditor from "../EditEditor";
 function CampaignSteps(props){
   const {emailEditor, campaign, step, selectedCampaign} = useContext(GlobalContext)
   const [editor, setEditor] = emailEditor
-  const [setCampaignId] = selectedCampaign
+  const [campaignId, setCampaignId] = selectedCampaign
   const [campaignData, setCampaignData] = campaign
   const [modalOpen, setModalOpen] = useState(false)
   const [editEditor, setEditEditor] = useState(false) 
@@ -60,7 +60,7 @@ function CampaignSteps(props){
        newStep()
     }
     else{
-      return null
+      console.log(campaignId)
     }
     setCampaignId("")
   }
