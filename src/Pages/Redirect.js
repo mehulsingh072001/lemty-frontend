@@ -10,7 +10,7 @@ function Redirect() {
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const {userData} = useContext(GlobalContext)
-  const [setUserDataModal] = userData
+  const [userDataModal, setUserDataModal] = userData
 
   const submit = () => {
     var url_string = window.location.href
@@ -20,7 +20,7 @@ function Redirect() {
     axios.get("/api/gmail/get-token/"+cookies.get("userId")+"?code="+code).then((res) => {
       console.log(res)
       if(res.status === 200){
-        setUserDataModal(false)
+        setUserDataModal(!userDataModal)
         window.close()
       }
     })
