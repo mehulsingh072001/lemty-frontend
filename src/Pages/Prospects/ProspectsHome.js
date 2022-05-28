@@ -39,7 +39,7 @@ function ProspectsHome(){
 
   useEffect(() => {
     getData()
-    getProspectCounts(selectedList.name, selectedList.id)
+    getProspectCounts()
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedList, pageNumber, pageSize])
 
@@ -155,8 +155,10 @@ function ProspectsHome(){
     }
   }
 
-  const getProspectCounts = async (listName, listId) => {
-    if(listName === "all"){
+  const getProspectCounts = async () => {
+    const name = selectedList.name
+    const id = selectedList.id
+    if(name === "all"){
       const userId = cookies.get("userId")
       await axios.get(`/api/prospects/prospect/user/${userId}/count`, {
           headers: {
@@ -167,7 +169,7 @@ function ProspectsHome(){
       })
     }
     else{
-      await axios.get(`/api/prospects/prospect/${listId}/count`, {
+      await axios.get(`/api/prospects/prospect/${id}/count`, {
           headers: {
             "Authorization": `Bearer ${cookies.get('access_token')}`
           },
@@ -232,7 +234,7 @@ function ProspectsHome(){
 
   return(
     <div className="prospects">
-      {add===true ? <Add/> : null}
+      {add===true ? <Add getData={getData} getProspectCounts={getProspectCounts}/> : null}
       {createList ? <CreateList toggleCreateList={toggleCreateList}/> : null}
       {addTo ? <AddToCampaign toggleAddTo={toggleAddTo} selectedProspects={selectedProspects} getData={getData}/> : null}
       <AppSidebar/>

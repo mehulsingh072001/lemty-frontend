@@ -9,7 +9,7 @@ import MapColumns from "./MapColumns";
 import AssignList from "./AssignList";
 
 const cookies = new Cookies();
-function Upload(){
+function Upload({getData, getProspectCounts}){
   const {addProspect, upload} = useContext(GlobalContext)
   const [add, setAdd] = addProspect
   const [progress, setProgress] = useState(1)
@@ -20,6 +20,8 @@ function Upload(){
   const [file, setFile] = useState(null)
   const token = cookies.get("access_token")
   const user_id = cookies.get("userId")
+  const [uploadSucess, setUploadSuccess] = useState(false)
+  const [uploadResponse, setUploadResponse] = useState({})
 
   const handleFileUpload = (f) => {
     let data = new FormData()
@@ -71,13 +73,11 @@ function Upload(){
     }).then((res) => {
       console.log("Submitted1")
       if(res.status === 200){
-        window.location.reload()
+        setUploadSuccess(true)
+        console.log(res.data)
+        setUploadResponse(res.data)
       }
     })
-  }
-
-  function toggleAdd(){
-    setAdd(!add)
   }
 
   function toggleUpload(){
@@ -85,8 +85,11 @@ function Upload(){
   }
 
   function toggleHome(){
-    toggleUpload()
-    toggleAdd()
+    setNewUpload(false)
+    setAdd(!add)
+    setUploadSuccess(false)
+    getData()
+    getProspectCounts()
   }
 
   const selectProgress = (number) => {
@@ -127,8 +130,7 @@ function Upload(){
           <UploadNav toggleUpload={toggleUpload} importProspect={importProspect} nextStep={nextStep} progress={progress} toggleHome={toggleHome}/>
           <div className="upload__container">
               <UploadModalBar progress={progress} selectProgress={selectProgress}/>
-              {/* <MapColumns csvHeaders={csvHeaders} prospectData={prospectData} setProspectData={setProspectData}/> */}
-              <AssignList list={list} setList={setList}/>
+              <AssignList list={list} setList={setList} uploadSucess={uploadSucess} toggleHome={toggleHome} uploadResponse={uploadResponse}/>
           </div>
         </div>
       )
