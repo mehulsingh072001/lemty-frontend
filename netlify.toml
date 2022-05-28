@@ -3,3 +3,7 @@
   to = "https://sheltered-atoll-68849.herokuapp.com/api/:splat"
   status = 200
   force = true
+
+  from = "/*"
+  to = "/index.html"
+  status = 200
