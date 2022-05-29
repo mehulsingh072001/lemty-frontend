@@ -16,10 +16,9 @@ function Redirect() {
     axios.get("api/gmail/get-token/"+cookies.get("userId")+"?code="+code).then((res) => {
       console.log(res)
       if(res.status === 200){
-        // window.close()
+        window.close()
       }
     })
-        // window.close()
   }
   return(
     <div>
