@@ -11,7 +11,7 @@ function CampaignProspectsExisting() {
   const [addExistingModal, setAddExistingModal] = addExistingProspect
   const [prospects, setProspects] = useState([])
   const [selectedProspects, setSelectedProspects] = useState([])
-  const [campaignId] = selectedCampaign
+  const [campaignId, setCampaignId] = selectedCampaign
   const [reviewModal, setReviewModal] = review
   const [totalElements, setTotalElements] = useState()
   const [totalPages, setTotalPages] = useState()

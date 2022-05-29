@@ -11,7 +11,7 @@ const CampaignSettings = (props) => {
   const [stop, setStop] = useState(true)
   const [campaignData, setCampaignData] = campaign
   const [limit] = useState(100)
-  const [campaignName] = useState("")
+  const [campaignName, setCampaignName] = useState("")
   const [timezones] = useState([
     'America/Los_Angeles',
     'Africa/Accra',
