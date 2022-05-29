@@ -5,13 +5,12 @@ import Cookies from 'universal-cookie';
 import CampaignReview from "../CampaignReview";
 
 const cookies = new Cookies()
-function CampaignProspectsExisting() {
-  const {addProspectCampaign, addExistingProspect, selectedCampaign, review} = useContext(GlobalContext)
+function CampaignProspectsExisting({campaignId}) {
+  const {addProspectCampaign, addExistingProspect, review} = useContext(GlobalContext)
   const [setCampaignProspectAdd] = addProspectCampaign
   const [addExistingModal, setAddExistingModal] = addExistingProspect
   const [prospects, setProspects] = useState([])
   const [selectedProspects, setSelectedProspects] = useState([])
-  const [campaignId, setCampaignId] = selectedCampaign
   const [reviewModal, setReviewModal] = review
   const [totalElements, setTotalElements] = useState()
   const [totalPages, setTotalPages] = useState()

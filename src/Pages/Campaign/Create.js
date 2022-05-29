@@ -89,7 +89,7 @@ function Create(){
       )
     case 2:
       return(
-        <AddProspect nextStep={nextStep} prevStep={prevStep}/>
+        <AddProspect nextStep={nextStep} prevStep={prevStep} campaignId={campaignId}/>
       )
     default:
       return progress

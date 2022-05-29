@@ -12,7 +12,7 @@ const AddProspect = (props) => {
   return(
     <div className="campaign-prospects">
       <AppSidebar/>
-      {campaignProspectAdd===true ? <CampaignAdd/> : null}
+      {campaignProspectAdd===true ? <CampaignAdd campaignId={props.campaignId}/> : null}
       <AppTopbar title={"Campaigns"}/>
       <div className="campaign-prospects__container">
         <ProgressBar prevStep={props.prevStep} nextStep={props.nextStep} step={props.step}/>

@@ -79,7 +79,7 @@ function CampaignsHome() {
 
   return(
     <div className="campaigns">
-      {campaignProspectAdd  ? <CampaignAdd/> : null}
+      {campaignProspectAdd  ? <CampaignAdd campaignId={campaignId}/> : null}
       {nameModal ? <UpdateCampaignName campaignId={campaignId} toggleUpdateName={toggleUpdateName} getData={getData}/> : null}
       <AppSidebar/>
       <AppTopbar title={"Campaigns"}/>
