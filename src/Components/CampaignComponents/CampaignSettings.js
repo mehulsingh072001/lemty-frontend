@@ -1,7 +1,7 @@
 import ProgressBar from "./ProgressBar"
 import AppSidebar from "../Sidebars/AppSidebar"
 import AppTopbar from "../Topbars/AppTopbar"
-import {useContext, useEffect, useState} from "react"
+import {useContext, useState} from "react"
 import ToggleSwitch from "../ToggleSwitch"
 import {GlobalContext} from "../../GlobalProvider"
 
