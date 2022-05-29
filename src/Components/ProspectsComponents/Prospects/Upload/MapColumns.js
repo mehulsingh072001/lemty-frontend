@@ -13,12 +13,12 @@ const MapColumns = (props) => {
         <label htmlFor="">FirstName</label>
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, firstName: e.target.value})}>
-            <option selected={props.prospectData.firstName === "empty" ? "selected" : null}  value="none">{props.prospectData.firstName === "empty" ? "" : props.prospectData.firstName}</option>
+            <option selected={props.prospectData.firstName === "" ? "selected" : null}  value="none">{props.prospectData.firstName === "" ? "" : props.prospectData.firstName}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.firstName === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault();  props.setProspectData({...props.prospectData, "firstName": "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.firstName === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault();  props.setProspectData({...props.prospectData, "firstName": "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -27,12 +27,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, lastName: e.target.value})}>
-            <option selected={props.prospectData.lastName === "empty" ? "selected" : null} value="none">{props.prospectData.lastName === "empty" ? "" : props.prospectData.lastName}</option>
+            <option selected={props.prospectData.lastName === "" ? "selected" : null} value="none">{props.prospectData.lastName === "" ? "" : props.prospectData.lastName}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.lastName === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, lastName: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.lastName === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, lastName: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -41,12 +41,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectEmail: e.target.value})}>
-            <option selected={props.prospectData.prospectEmail === "empty" ? "selected" : null} value="none">{props.prospectData.prospectEmail === "empty" ? "" : props.prospectData.prospectEmail}</option>
+            <option selected={props.prospectData.prospectEmail === "" ? "selected" : null} value="none">{props.prospectData.prospectEmail === "" ? "" : props.prospectData.prospectEmail}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectEmail === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectEmail: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectEmail === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectEmail: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -55,12 +55,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectCompany: e.target.value})}>
-            <option selected={props.prospectData.prospectCompany === "empty" ? "selected" : null} value="none">{props.prospectData.prospectCompany === "empty" ? "" : props.prospectData.prospectCompany}</option>
+            <option selected={props.prospectData.prospectCompany === "" ? "selected" : null} value="none">{props.prospectData.prospectCompany === "" ? "" : props.prospectData.prospectCompany}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectCompany === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCompany: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectCompany === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCompany: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -69,12 +69,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectMobileNumber: e.target.value})}>
-            <option selected={props.prospectData.prospectMobileNumber === "empty" ? "selected" : null} value="none">{props.prospectData.prospectMobileNumber === "empty" ? "" : props.prospectData.prospectMobileNumber}</option>
+            <option selected={props.prospectData.prospectMobileNumber === "" ? "selected" : null} value="none">{props.prospectData.prospectMobileNumber === "" ? "" : props.prospectData.prospectMobileNumber}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectMobileNumber === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectMobileNumber: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectMobileNumber === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectMobileNumber: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -83,12 +83,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectAccount: e.target.value})}>
-            <option selected={props.prospectData.prospectAccount === "empty" ? "selected" : null} value="none">{props.prospectData.prospectAccount === "empty" ? "" : props.prospectData.prospectAccount}</option>
+            <option selected={props.prospectData.prospectAccount === "" ? "selected" : null} value="none">{props.prospectData.prospectAccount === "" ? "" : props.prospectData.prospectAccount}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectAccount === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectAccount: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectAccount === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectAccount: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -97,12 +97,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectCompanyEmail: e.target.value})}>
-            <option selected={props.prospectData.prospectCompanyEmail === "empty" ? "selected" : null} value="none">{props.prospectData.prospectCompanyEmail === "empty" ? "" : props.prospectData.prospectCompanyEmail}</option>
+            <option selected={props.prospectData.prospectCompanyEmail === "" ? "selected" : null} value="none">{props.prospectData.prospectCompanyEmail === "" ? "" : props.prospectData.prospectCompanyEmail}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectCompanyEmail === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCompanyEmail: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectCompanyEmail === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCompanyEmail: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -111,12 +111,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectDepartment: e.target.value})}>
-            <option selected={props.prospectData.prospectDepartment === "empty" ? "selected" : null} value="none">{props.prospectData.prospectDepartment === "empty" ? "" : props.prospectData.prospectDepartment}</option>
+            <option selected={props.prospectData.prospectDepartment === "" ? "selected" : null} value="none">{props.prospectData.prospectDepartment === "" ? "" : props.prospectData.prospectDepartment}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectDepartment === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectDepartment: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectDepartment === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectDepartment: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -125,12 +125,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectTitle: e.target.value})}>
-            <option selected={props.prospectData.prospectTitle === "empty" ? "selected" : null} value="none">{props.prospectData.prospectTitle === "empty" ? "" : props.prospectData.prospectTitle}</option>
+            <option selected={props.prospectData.prospectTitle === "" ? "selected" : null} value="none">{props.prospectData.prospectTitle === "" ? "" : props.prospectData.prospectTitle}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectTitle === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectTitle: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectTitle === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectTitle: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -139,12 +139,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectCompanyDomain: e.target.value})}>
-            <option selected={props.prospectData.prospectCompanyDomain === "empty" ? "selected" : null} value="none">{props.prospectData.prospectCompanyDomain === "empty" ? "" : props.prospectData.prospectCompanyDomain}</option>
+            <option selected={props.prospectData.prospectCompanyDomain === "" ? "selected" : null} value="none">{props.prospectData.prospectCompanyDomain === "" ? "" : props.prospectData.prospectCompanyDomain}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectCompanyDomain === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCompanyDomain: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectCompanyDomain === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCompanyDomain: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -153,12 +153,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectLinkedinUrl: e.target.value})}>
-            <option selected={props.prospectData.prospectLinkedinUrl === "empty" ? "selected" : null} value="none">{props.prospectData.prospectLinkedinUrl === "empty" ? "" : props.prospectData.prospectLinkedinUrl}</option>
+            <option selected={props.prospectData.prospectLinkedinUrl === "" ? "selected" : null} value="none">{props.prospectData.prospectLinkedinUrl === "" ? "" : props.prospectData.prospectLinkedinUrl}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectLinkedinUrl === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectLinkedinUrl: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectLinkedinUrl === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectLinkedinUrl: "".toString()})}}>Empty</button>
         </div>
           
       </div>
@@ -168,12 +168,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectTwitterUrl: e.target.value})}>
-            <option selected={props.prospectData.prospectTwitterUrl === "empty" ? "selected" : null} value="none">{props.prospectData.prospectTwitterUrl === "empty" ? "" : props.prospectData.prospectTwitterUrl}</option>
+            <option selected={props.prospectData.prospectTwitterUrl === "" ? "selected" : null} value="none">{props.prospectData.prospectTwitterUrl === "" ? "" : props.prospectData.prospectTwitterUrl}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectTwitterUrl === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectTwitterUrl: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectTwitterUrl === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectTwitterUrl: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -182,12 +182,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectLocation: e.target.value})}>
-            <option selected={props.prospectData.prospectLocation === "empty" ? "selected" : null} value="none">{props.prospectData.prospectLocation === "empty" ? "" : props.prospectData.prospectLocation}</option>
+            <option selected={props.prospectData.prospectLocation === "" ? "selected" : null} value="none">{props.prospectData.prospectLocation === "" ? "" : props.prospectData.prospectLocation}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectLocation === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectLocation: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectLocation === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectLocation: "".toString()})}}>Empty</button>
         </div>
       </div>
 
@@ -196,12 +196,12 @@ const MapColumns = (props) => {
 
         <div className="column__form--container--item">
           <select id="" name="" onChange={(e) => props.setProspectData({...props.prospectData, prospectCountry: e.target.value})}>
-            <option selected={props.prospectData.prospectCountry === "empty" ? "selected" : null} value="none">{props.prospectData.prospectCountry === "empty" ? "" : props.prospectData.prospectCountry}</option>
+            <option selected={props.prospectData.prospectCountry === "" ? "selected" : null} value="none">{props.prospectData.prospectCountry === "" ? "" : props.prospectData.prospectCountry}</option>
             {props.csvHeaders.map(d => 
                   <option key={d.id} value={d.id}>{d}</option>
             )}
           </select>
-          <button className={`${props.prospectData.prospectCountry === "empty" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCountry: "empty".toString()})}}>Empty</button>
+          <button className={`${props.prospectData.prospectCountry === "" ? "btn-sec--disabled" : "btn-sec"}`} onClick={(e) => {e.preventDefault(); props.setProspectData({...props.prospectData, prospectCountry: "".toString()})}}>Empty</button>
         </div>
       </div>
     </form>

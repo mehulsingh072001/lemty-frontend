@@ -63,6 +63,7 @@ function CampaignSteps(props){
       console.log(campaignId)
     }
     setCampaignId("")
+    console.log(campaignId)
   }
 
   function newStep(){

@@ -3,7 +3,7 @@ import { GlobalContext } from "../../../GlobalProvider"
 import Upload from "./Upload/Upload"
 import New from "./New"
 
-function Add(){
+function Add(props){
   const {addProspect, newProspect, upload} = useContext(GlobalContext)
   const [newUpload, setNewUpload] = upload
   const [add, setAdd] = addProspect
@@ -22,8 +22,8 @@ function Add(){
   }
   return(
     <div className="add">
-      {newP===true ? <New/> : console.log('null')}
-      {newUpload===true ? <Upload/> : console.log('null')}
+      {newP===true ? <New/> : null}
+      {newUpload===true ? <Upload getData={props.getData} getProspectCounts={props.getProspectCounts}/> : null}
       <nav className="nav">
         <h1>Add Prospects</h1>
         <button onClick={toggleAdd} className="close">&times;</button>
