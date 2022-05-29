@@ -13,7 +13,7 @@ import EditEditor from "../EditEditor";
 function CampaignSteps(props){
   const {emailEditor, campaign, step, selectedCampaign} = useContext(GlobalContext)
   const [editor, setEditor] = emailEditor
-  const [setCampaignId] = selectedCampaign
+  const [campaignId, setCampaignId] = selectedCampaign
   const [campaignData, setCampaignData] = campaign
   const [modalOpen, setModalOpen] = useState(false)
   const [editEditor, setEditEditor] = useState(false) 
@@ -24,7 +24,7 @@ function CampaignSteps(props){
   const [daySetter, setDaySetter] = useState(0)
   const [stepSetter, setStepSetter] = useState(0)
   const [plainEmail, setPlainEmail] = useState("")
-  const [setEdited] = useState(false)
+  const [edited, setEdited] = useState(false)
   const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
   useEffect(() => {
@@ -63,6 +63,7 @@ function CampaignSteps(props){
       return null
     }
     setCampaignId("")
+    console.log(campaignId)
   }
 
   function newStep(){
@@ -258,7 +259,7 @@ function CampaignSteps(props){
              </>
             )}
         </div>
-      { modalOpen ? <StepSettingsModal toggler={toggleModal} addStep={addStep} index={currentIndex} setEdited={setEdited}/> : null}
+      { modalOpen ? <StepSettingsModal toggler={toggleModal} addStep={addStep} index={currentIndex} edited={edited} setEdited={setEdited}/> : null}
     </div>
   )
 }

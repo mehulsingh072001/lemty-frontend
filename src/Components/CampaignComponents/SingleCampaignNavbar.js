@@ -8,11 +8,13 @@ function SingleCampaignNavbar(){
   const { id } = useParams()
   const {addProspectCampaign, selectedCampaign} = useContext(GlobalContext)
   const [setCampaignProspectAdd] = addProspectCampaign;
-  const [setCampaignId] = selectedCampaign
+  const [campaignId, setCampaignId] = selectedCampaign
 
   useEffect(() => {
     setCampaignId(id)
-  })
+    console.log(campaignId)
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
 
   return(
     <div className="single-campaign-navbar">

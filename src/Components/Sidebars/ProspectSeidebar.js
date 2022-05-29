@@ -1,6 +1,5 @@
 import axios from "axios"
 import {useState, useEffect} from "react"
-import CreateList from "../InputModals/CreateList"
 
 import Cookies from "universal-cookie"
 

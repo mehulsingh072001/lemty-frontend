@@ -55,14 +55,14 @@ function Create(){
       'Authorization': `Bearer ${cookies.get("access_token")}`
     }
     if(campaignId === ""){
-      axios.post(`/campaigns/${cookies.get("userId")}`, campaignData, {headers: headers}).then((res) => {
+      axios.post(`/api/campaigns/${cookies.get("userId")}`, campaignData, {headers: headers}).then((res) => {
         if(res.status===201){
           setCampaignId(res.data.id)
         }
       })
     }
     else {
-      axios.put(`/campaigns/${campaignId}`, campaignData, {headers: headers}).then((res) => {
+      axios.put(`/api/campaigns/${campaignId}`, campaignData, {headers: headers}).then((res) => {
         if(res.status===200){
           console.log(res.data.id)
         }

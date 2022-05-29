@@ -154,14 +154,14 @@ const CampaignSettings = (props) => {
 
           <div className="timezone">
             <p className="copy__para--medium">Set Time Zone</p>
-            <select id="" name="" onChange={(e) => setCampaignData({...campaignData, timezone: timezones[e.target.value]})}>
+            <select onChange={(e) => setCampaignData({...campaignData, timezone: timezones[e.target.value]})}>
               {Timezones.map((adress, key) => <option key={key} value={key}>{adress}</option>)}
             </select>
           </div>
 
           <div className="limit">
             <p>Set Number of emails to be sent in a day</p>
-            <input type="number" value={campaignData.dailyLimit} required onChange={(e) => setCampaignData({...campaignData, dailyLimit: e.target.value})}/>
+            <input type="number" defaultValue={campaignData.dailyLimit} required onChange={(e) => setCampaignData({...campaignData, dailyLimit: e.target.value})}/>
           </div>
 
           <div className="stop">
