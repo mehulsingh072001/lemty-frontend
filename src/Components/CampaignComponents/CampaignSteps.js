@@ -24,7 +24,7 @@ function CampaignSteps(props){
   const [daySetter, setDaySetter] = useState(0)
   const [stepSetter, setStepSetter] = useState(0)
   const [plainEmail, setPlainEmail] = useState("")
-  const [setEdited] = useState(false)
+  const [edited, setEdited] = useState(false)
   const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
   useEffect(() => {
@@ -258,7 +258,7 @@ function CampaignSteps(props){
              </>
             )}
         </div>
-      { modalOpen ? <StepSettingsModal toggler={toggleModal} addStep={addStep} index={currentIndex} setEdited={setEdited}/> : null}
+      { modalOpen ? <StepSettingsModal toggler={toggleModal} addStep={addStep} index={currentIndex} edited={edited} setEdited={setEdited}/> : null}
     </div>
   )
 }
