@@ -202,7 +202,7 @@ function EmailSettings() {
     // const redirect_uri = "redirect_uri=http://localhost:3000/redirect&";
     const redirect_uri = "redirect_uri=https://lemty.wurnace.com/redirect&";
     const client_id = "client_id=1087727582839-72qgrk3g3ea46kq65coo7lbgg3f5cteg.apps.googleusercontent.com&";
-    const prmt = "prompt=consent"
+    const prmt = "prompt=consent&"
     const auth_url = "https://accounts.google.com/o/oauth2/v2/auth?"+scope+accessType+include_granted_scopes+response_type+redirect_uri+prmt+client_id;
     var newWindow = window.open(auth_url, null, 'height=500,width=450')
     newWindow.focus()
