@@ -1590,11 +1590,9 @@ body {
       margin-right: 1rem; }
     .progress-bar .btns .unactive {
       display: none; }
-  .progress-bar .active {
-    color: black; }
-    .progress-bar .active .bullet {
-      padding: .2rem;
-      border: 5px solid #504ee4; }
+  .progress-bar .active .bullet {
+    padding: .2rem;
+    border: 5px solid #504ee4; }
 
 .add {
   height: 100%;
