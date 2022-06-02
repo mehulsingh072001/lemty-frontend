@@ -10,9 +10,9 @@ import Preview from "./Preview";
 const cookies = new Cookies()
 function CampaignReview({selectedProspects, toggleHome, toggleReview}) {
   const {selectedCampaign, preview, step, campaignBar} = useContext(GlobalContext)
-  const [setProgress] = campaignBar
-  const [setAddStep] = step
-  const [campaignId] = selectedCampaign
+  const [progress, setProgress] = campaignBar
+  const [addStep, setAddStep] = step
+  const [campaignId, setCampaignId] = selectedCampaign
   const [previewModal, setPreviewModal] = preview
   const navigate = useNavigate();
 
@@ -42,6 +42,9 @@ function CampaignReview({selectedProspects, toggleHome, toggleReview}) {
         setAddStep([])
         navigate(`/campaigns/${campaignId}/step`)
         setProgress(0)
+        console.log(progress)
+        console.log(addStep)
+        setCampaignId("")
       }
     })
   }

@@ -213,7 +213,8 @@ body {
     background-color: #504ee4;
     border: 1px solid #0d144a;
     border-radius: 4px;
-    cursor: default; }
+    cursor: default;
+    color: #ffffff; }
   .btn:active {
     background-color: #3739bd;
     border: 1px solid #3739bd; }

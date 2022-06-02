@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import Cookies from "universal-cookie";
 import axios from "axios";
@@ -6,15 +6,17 @@ import moment from "moment";
 
 import AppSidebar from "../../../Components/Sidebars/AppSidebar";
 import AppTopbar from "../../../Components/Topbars/AppTopbar"
-
 import CampaignSidebar from "../../../Components/Sidebars/CampaignSidebar"
 import SingleCampaignNavbar from "../../../Components/CampaignComponents/SingleCampaignNavbar";
-import CampaignAdd from "../../../Components/CampaignComponents/CampaignProspects/CampaignAdd"
+import CampaignAdd from "../../../Components/CampaignComponents/CampaignProspects/CampaignAdd";
+import { GlobalContext } from "../../../GlobalProvider";
 
 function SingleCampaignEmails() {
+  const {addProspectCampaign} = useContext(GlobalContext)
   const [emails, setEmails] = useState([])
   const [emailsCount, setEmailsCount] = useState({})
   const cookies = new Cookies()
+  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
   const [selectedEmails, setSelectedEmails] = useState([])
   const [status, setStatus] = useState("TODAY")
   const {id} = useParams()
@@ -90,6 +92,7 @@ function SingleCampaignEmails() {
 
   return(
     <div className="single-campaign">
+      {campaignProspectAdd===true ? <CampaignAdd/> : null}
       <AppSidebar/>
       <AppTopbar title={"Campaign"}/>
       <div className="single-campaign__container">
@@ -97,7 +100,7 @@ function SingleCampaignEmails() {
             <CampaignSidebar/>
           </div>
           <div className="single-campaign__container--content">
-            <SingleCampaignNavbar/>
+            <SingleCampaignNavbar setCampaignProspectAdd={setCampaignProspectAdd}/>
               <div className="toolbar">
                 <div className="name">
                   <h4>My Emails</h4>

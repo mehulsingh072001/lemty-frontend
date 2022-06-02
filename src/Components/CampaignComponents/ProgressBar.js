@@ -33,7 +33,7 @@ const ProgressBar = (props) => {
         <button onClick={() => saveExit()} className={`btn-sec ${addStep.length !== 0 ? addStep[0].mails.length !== 0 ? 'active' : 'unactive' : null}`}>Save & Exit</button>
         <button onClick={() => navigate("/campaigns/home")} className={`btn-sec ${addStep.length !== 0 ? addStep[0].mails.length === 0 ? 'active' : 'unactive' : null}`}>Exit</button>
         <button onClick={() => props.prevStep()} className={`btn-sec ${progress===0 ? 'unactive' : 'active'}`}>Previous</button>
-        <button onClick={() => nextStep()} className={`btn ${progress===2 ? 'unactive' : 'active'}`}>Next</button>
+        <button onClick={() => nextStep()} className={`${addStep[0].mails.length !== 0 ? 'btn' : 'btn--disabled'} ${progress===2 ? 'unactive' : 'active'}`}>Next</button>
       </div>
     </div>
   )

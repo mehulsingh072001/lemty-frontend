@@ -16,7 +16,7 @@ const cookies = new Cookies()
 function SingleCampaignProspects() {
   const [prospects, setProspects] = useState([])
   const {addProspectCampaign} = useContext(GlobalContext)
-  const [campaignProspectAdd] = addProspectCampaign
+  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
   const [selectedProspects, setSelectedProspects] = useState([])
   const [totalElements, setTotalElements] = useState()
   const [totalPages, setTotalPages] = useState()
@@ -137,7 +137,7 @@ function SingleCampaignProspects() {
             <CampaignSidebar/>
           </div>
           <div className="single-campaign__container--content">
-            <SingleCampaignNavbar/>
+            <SingleCampaignNavbar setCampaignProspectAdd={setCampaignProspectAdd}/>
             <div className="prospects__container--content">
               <div className="toolbar">
                 <div className="name">
