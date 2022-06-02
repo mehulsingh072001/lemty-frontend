@@ -7,7 +7,7 @@ import CampaignReview from "../CampaignReview";
 const cookies = new Cookies()
 function CampaignProspectsExisting({campaignId}) {
   const {addProspectCampaign, addExistingProspect, review} = useContext(GlobalContext)
-  const [setCampaignProspectAdd] = addProspectCampaign
+  const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
   const [addExistingModal, setAddExistingModal] = addExistingProspect
   const [prospects, setProspects] = useState([])
   const [selectedProspects, setSelectedProspects] = useState([])
@@ -29,7 +29,7 @@ function CampaignProspectsExisting({campaignId}) {
   function toggleHome(){
     setReviewModal(false)
     setAddExistingModal(false)
-    setCampaignProspectAdd(false)
+    setCampaignProspectAdd(!campaignProspectAdd)
   }
 
   function previousPage() {
