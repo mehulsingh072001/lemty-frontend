@@ -29,6 +29,46 @@
                         width: 20%;
                         padding: 2rem;
                     }
+                    &-chart{
+                        height: 32rem;
+                        display: grid;
+                        grid-template-rows: 1fr auto;
+                        padding: 1.6rem;
+                        width: 100%;
+                        &__bars{
+                            display: grid;
+                            align-items: end;
+                            text-align: center;
+                            grid-column-gap: 1.2rem;
+                            grid-template-columns: repeat(7, 1fr);
+                            justify-items: center;
+                            &--item{
+                                width: 40px;
+                                max-height: 100%;
+                                &--bar{
+                                    border-top-right-radius: 4px;
+                                    border-top-left-radius: 4px;
+                                    max-height: 100%;
+                                    width: 100%;
+                                    background-color: #504ee4;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                        &__days {
+                            display: grid;
+                            font-size: 1.2rem;
+                            height: fit-content;
+                            grid-template-columns: repeat(7, 1fr);
+                            grid-column-gap: 1.2rem;
+                            text-align: center;
+                            justify-content: center;
+                            align-items: center;
+                            border-top: 1px solid $color_border_dark;
+                            padding-top: .8rem;
+
+                        }
+                    }
                 }
             }
         }

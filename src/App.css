@@ -2579,6 +2579,40 @@ body {
             border-right: 1px solid #e1e1e3;
             width: 20%;
             padding: 2rem; }
+          .dashboard__container--left--data .data-chart {
+            height: 32rem;
+            display: grid;
+            grid-template-rows: 1fr auto;
+            padding: 1.6rem;
+            width: 100%; }
+            .dashboard__container--left--data .data-chart__bars {
+              display: grid;
+              align-items: end;
+              text-align: center;
+              grid-column-gap: 1.2rem;
+              grid-template-columns: repeat(7, 1fr);
+              justify-items: center; }
+              .dashboard__container--left--data .data-chart__bars--item {
+                width: 40px;
+                max-height: 100%; }
+                .dashboard__container--left--data .data-chart__bars--item--bar {
+                  border-top-right-radius: 4px;
+                  border-top-left-radius: 4px;
+                  max-height: 100%;
+                  width: 100%;
+                  background-color: #504ee4;
+                  height: 100%; }
+            .dashboard__container--left--data .data-chart__days {
+              display: grid;
+              font-size: 1.2rem;
+              height: fit-content;
+              grid-template-columns: repeat(7, 1fr);
+              grid-column-gap: 1.2rem;
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+              border-top: 1px solid #e1e1e3;
+              padding-top: .8rem; }
     .dashboard__container--right {
       width: 60%;
       margin-left: 3rem;
