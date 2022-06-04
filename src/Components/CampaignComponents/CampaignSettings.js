@@ -1,17 +1,17 @@
 import ProgressBar from "./ProgressBar"
 import AppSidebar from "../Sidebars/AppSidebar"
 import AppTopbar from "../Topbars/AppTopbar"
-import {useContext, useEffect, useState} from "react"
+import {useContext, useState} from "react"
 import ToggleSwitch from "../ToggleSwitch"
 import {GlobalContext} from "../../GlobalProvider"
 
 const CampaignSettings = (props) => {
   const {campaign} = useContext(GlobalContext)
-  const [selectedTimezone] = useState('America/Los_Angeles')
+  // const [selectedTimezone] = useState('America/Los_Angeles')
   const [stop, setStop] = useState(true)
   const [campaignData, setCampaignData] = campaign
-  const [limit] = useState(100)
-  const [campaignName] = useState("")
+  // const [limit] = useState(100)
+  // const [campaignName, setCampaignName] = useState("")
   const [timezones] = useState([
     'America/Los_Angeles',
     'Africa/Accra',
@@ -121,10 +121,10 @@ const CampaignSettings = (props) => {
     'Pacific/Kiritimati',
   ])
 
-  useEffect(() => {
-    handleChange()
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // useEffect(() => {
+  //   handleChange()
+  //  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
 
   const Timezones = timezones.map(Timezone => Timezone)
 
@@ -133,17 +133,16 @@ const CampaignSettings = (props) => {
     setCampaignData({...campaignData, campaignStop: !stop})
   }
 
-
-  const handleChange = () => {
-    setCampaignData({...campaignData, campaign_name: campaignName, campaignStop: stop, dailyLimit: limit, timezone: selectedTimezone})
-  }
+//   const handleChange = () => {
+//     setCampaignData({...campaignData, campaign_name: campaignName, campaignStop: stop, dailyLimit: limit, timezone: selectedTimezone})
+//   }
 
   return(
     <div className="campaign-settings">
       <AppSidebar/>
       <AppTopbar title={"Campaigns"}/>
       <div className="campaign-create__container">
-        <ProgressBar saveExit={props.saveExit} saveCampaign={props.saveCampaign} handleChange={handleChange} prevStep={props.prevStep} nextStep={props.nextStep} step={props.step}/>
+        <ProgressBar saveExit={props.saveExit} saveCampaign={props.saveCampaign} prevStep={props.prevStep} nextStep={props.nextStep} step={props.step}/>
         <div className="campaign-settings__container--name">
           <p className="u-settings-title u-margin-bottom-small heading-4-light">Cadence Name</p>
           <input type="text" name="name" value={campaignData.campaign_name} required onChange={(e) => setCampaignData({...campaignData, campaign_name: e.target.value})}/>

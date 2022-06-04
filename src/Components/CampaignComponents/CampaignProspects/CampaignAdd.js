@@ -4,7 +4,7 @@ import Upload from "./CampaignUpload/CampaignUpload"
 import CampaignProspectNew from "./CampaignProspectNew"
 import CampaignProspectsExisting from "./CampaignProspectsExisting"
 
-function CampaignAdd(){
+function CampaignAdd({campaignId}){
   const {newProspect, upload, addExistingProspect, addProspectCampaign} = useContext(GlobalContext)
   const [newUpload, setNewUpload] = upload
   const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
@@ -25,8 +25,8 @@ function CampaignAdd(){
   return(
     <div className="add">
       {newP===true ? <CampaignProspectNew/> : null}
-      {newUpload===true ? <Upload/> : console.log('null')}
-      {addExistingModal===true ? <CampaignProspectsExisting/> : null}
+      {newUpload===true ? <Upload/> : null}
+      {addExistingModal===true ? <CampaignProspectsExisting campaignId={campaignId}/> : null}
       <nav className="nav">
         <h1 className="copy__para--big">Add Prospects</h1>
         <div>

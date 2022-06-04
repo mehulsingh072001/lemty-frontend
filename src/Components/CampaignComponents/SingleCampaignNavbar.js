@@ -4,10 +4,9 @@ import {useContext, useEffect} from "react"
 
 import { GlobalContext } from "../../GlobalProvider"
 
-function SingleCampaignNavbar(){
+function SingleCampaignNavbar({setCampaignProspectAdd}){
   const { id } = useParams()
-  const {addProspectCampaign, selectedCampaign} = useContext(GlobalContext)
-  const [setCampaignProspectAdd] = addProspectCampaign;
+  const {selectedCampaign} = useContext(GlobalContext)
   const [campaignId, setCampaignId] = selectedCampaign
 
   useEffect(() => {

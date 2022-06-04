@@ -60,7 +60,7 @@ function CampaignSteps(props){
        newStep()
     }
     else{
-      return null
+      console.log(campaignId)
     }
     setCampaignId("")
     console.log(campaignId)
