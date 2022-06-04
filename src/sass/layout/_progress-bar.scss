@@ -3,20 +3,37 @@
     &__container{
         display: flex;
         width: 70%;
-        justify-content: space-around;
         align-items: center;
         margin: auto;
         margin-top: 3rem;
         margin-bottom: 6rem;
+        justify-content: center;
         &--progress{
             display: flex;
             align-items: center;
+            justify-content: center;
             .bullet{
                 height: 1rem;
                 margin-right: 1rem;
                 width: 1rem;
                 border: 1px solid grey;
                 border-radius: 50%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: .2rem;
+                color: white;
+                font-family: FontAwesome;
+            }
+            &:not(:last-child){
+                &::after{
+                    content: "";
+                    height: 1px;
+                    width: 18rem;
+                    margin: 0 2rem;
+                    background-color: $color_border_dark;
+                }
             }
         }
     }
@@ -37,9 +54,25 @@
         }
     }
 
+    .done{
+        &:not(:last-child){
+            &::after{
+                background-color: $color_primary_light;
+            }
+        }
+        .bullet{
+            &::before{
+                border-radius: 50%;
+                background-color: $color_primary_light;
+                padding: .2rem;
+                font-size: 1rem;
+                content: "\f00c";
+            }
+        }
+    }
+
     .active{
         .bullet{
-            padding: .2rem;
             border: 5px solid $color_primary_light;
         }
     }

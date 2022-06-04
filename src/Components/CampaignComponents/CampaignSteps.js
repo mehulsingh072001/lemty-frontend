@@ -25,6 +25,7 @@ function CampaignSteps(props){
   const [stepSetter, setStepSetter] = useState(0)
   const [plainEmail, setPlainEmail] = useState("")
   const [edited, setEdited] = useState(false)
+  const [step1, setStep1] = useState(false)
   const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
   useEffect(() => {
@@ -170,7 +171,7 @@ function CampaignSteps(props){
             ?
               null 
             :
-            <ProgressBar prevStep={props.prevStep} nextStep={props.nextStep} addStep={addStep} saveExit={props.saveExit}/>
+            <ProgressBar prevStep={props.prevStep} nextStep={props.nextStep} step1={step1} setStep1={setStep1} addStep={addStep} saveExit={props.saveExit}/>
           }
         {addStep.map((d, index) => 
              <>

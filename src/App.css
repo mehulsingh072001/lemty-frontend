@@ -1568,20 +1568,34 @@ body {
   .progress-bar__container {
     display: flex;
     width: 70%;
-    justify-content: space-around;
     align-items: center;
     margin: auto;
     margin-top: 3rem;
-    margin-bottom: 6rem; }
+    margin-bottom: 6rem;
+    justify-content: center; }
     .progress-bar__container--progress {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      justify-content: center; }
       .progress-bar__container--progress .bullet {
         height: 1rem;
         margin-right: 1rem;
         width: 1rem;
         border: 1px solid grey;
-        border-radius: 50%; }
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .2rem;
+        color: white;
+        font-family: FontAwesome; }
+      .progress-bar__container--progress:not(:last-child)::after {
+        content: "";
+        height: 1px;
+        width: 18rem;
+        margin: 0 2rem;
+        background-color: #e1e1e3; }
   .progress-bar .btns {
     display: flex;
     justify-content: flex-end;
@@ -1591,8 +1605,15 @@ body {
       margin-right: 1rem; }
     .progress-bar .btns .unactive {
       display: none; }
-  .progress-bar .active .bullet {
+  .progress-bar .done:not(:last-child)::after {
+    background-color: #504ee4; }
+  .progress-bar .done .bullet::before {
+    border-radius: 50%;
+    background-color: #504ee4;
     padding: .2rem;
+    font-size: 1rem;
+    content: "\f00c"; }
+  .progress-bar .active .bullet {
     border: 5px solid #504ee4; }
 
 .add {
