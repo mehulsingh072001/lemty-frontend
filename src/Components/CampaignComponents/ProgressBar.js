@@ -9,7 +9,7 @@ const ProgressBar = (props) => {
   const [step3, setStep3] = useState(false)
   const {campaignBar, step} = useContext(GlobalContext)
   const [progress] = campaignBar
-  const [addStep, setAddStep] = step
+  const [addStep] = step
 
   useEffect(() => {
     if(progress === 1){
