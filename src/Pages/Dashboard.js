@@ -12,7 +12,6 @@ function Dashboard(){
   const [userCounts, setUserCounts] = useState({})
 
   useEffect(() => {
-    setPastDates()
     getSentCounts()
     getEmailsCount()
    // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -27,12 +26,14 @@ function Dashboard(){
         return d
     })
     setPastWeek(dates.reverse());
+    return dates;
   }
 
   const getSentCounts = () => {
+    const dates = setPastDates()
     const data = {
-      startDate: pastWeek[0],
-      endDate: pastWeek[6]
+      startDate: dates[0],
+      endDate: dates[6]
     }
     axios.post("api/emails/sent-count", data, {
       headers: {
