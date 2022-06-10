@@ -1,4 +1,4 @@
-import {useContext} from 'react'
+import {useEffect, useContext} from 'react'
 import CampaignSteps from '../../Components/CampaignComponents/CampaignSteps'
 import CampaignSettings from '../../Components/CampaignComponents/CampaignSettings'
 import AddProspect from '../../Components/CampaignComponents/AddProspect'
@@ -11,11 +11,22 @@ import { useNavigate } from 'react-router'
 const cookies = new Cookies();
 function Create(){
   const navigate = useNavigate()
-  const {campaignBar, campaign, selectedCampaign, step} = useContext(GlobalContext)
+  const {campaignBar, campaign, selectedCampaign, step, campaignName} = useContext(GlobalContext)
   const [progress, setProgress] = campaignBar
-  const [campaignData] = campaign
+  const [campaignNameCount, setCampaignNameCount] = campaignName
+  const [campaignData, setCampaignData] = campaign
   const [campaignId, setCampaignId] = selectedCampaign
   const [addStep, setAddStep] = step
+
+  useEffect(() => {
+    if(campaignData.name === undefined){
+      newCampaign()
+    }
+    else{
+      console.log(campaignData.name)
+    }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const prevStep = () => {
     setProgress(progress - 1)
@@ -23,6 +34,16 @@ function Create(){
 
   const nextStep = () => {
     setProgress(progress + 1)
+  }
+
+  const newCampaign = () => {
+    const campaign = {
+      campaign_name: `Campaign ${campaignNameCount}`,
+      timezone: "Asia/Kolkata",
+      dailyLimit: 100,
+      stop: true
+    }
+    setCampaignData(campaign)
   }
 
   const saveAndExitCampaign = () => {
@@ -48,6 +69,7 @@ function Create(){
         }
       })
     }
+    setCampaignNameCount(campaignNameCount + 1)
   }
 
   const saveCampaign = () => {
@@ -68,6 +90,7 @@ function Create(){
         }
       })
     }
+    setCampaignNameCount(campaignNameCount + 1)
   }
 
 
@@ -85,6 +108,7 @@ function Create(){
           saveCampaign={saveCampaign}
           addStep={addStep} 
           setAddStep={setAddStep}
+          campaignNameCount={campaignNameCount}
         />
       )
     case 2:

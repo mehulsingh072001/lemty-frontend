@@ -68,7 +68,7 @@ const StepSettingsModal = (props) => {
         <div className="step-settings">
           <div className="step-settings__modal">
             <StepSettingsBar progress={progress} selectProgress={selectProgress}/>
-            <WhichEmail selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail}/>
+            <WhichEmail selectedEmail={selectedEmail} setSelectedEmail={setSelectedEmail} creds={props.creds}/>
 
             <div className="step-settings__modal--btns">
               <button onClick={props.toggler} className="btn-sec">Cancel</button>

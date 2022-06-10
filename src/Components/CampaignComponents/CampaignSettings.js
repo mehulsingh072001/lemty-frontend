@@ -4,14 +4,12 @@ import AppTopbar from "../Topbars/AppTopbar"
 import {useContext, useState} from "react"
 import ToggleSwitch from "../ToggleSwitch"
 import {GlobalContext} from "../../GlobalProvider"
+import { useEffect } from "react"
 
 const CampaignSettings = (props) => {
   const {campaign} = useContext(GlobalContext)
-  // const [selectedTimezone] = useState('America/Los_Angeles')
-  const [stop, setStop] = useState(true)
   const [campaignData, setCampaignData] = campaign
-  // const [limit] = useState(100)
-  // const [campaignName, setCampaignName] = useState("")
+  const [stop, setStop] = useState(true)
   const [timezones] = useState([
     'America/Los_Angeles',
     'Africa/Accra',
@@ -121,16 +119,21 @@ const CampaignSettings = (props) => {
     'Pacific/Kiritimati',
   ])
 
-  // useEffect(() => {
-  //   handleChange()
-  //  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
-
   const Timezones = timezones.map(Timezone => Timezone)
 
   function toggleSwitch(){
     setStop(!stop)
     setCampaignData({...campaignData, campaignStop: !stop})
+  }
+
+  const newCampaign = () => {
+    const campaign = {
+      campaign_name: `Campaign ${props.campaignNameCount}`,
+      timezone: "Asia/Kolkata",
+      dailyLimit: 100,
+      stop: true
+    }
+    setCampaignData(campaign)
   }
 
 //   const handleChange = () => {
