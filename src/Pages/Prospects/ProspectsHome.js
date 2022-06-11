@@ -32,6 +32,7 @@ function ProspectsHome(){
   const [createList, setCreateList] = useState(false)
   const [loading, setLoading] = useState(true)
   const [addTo, setAddTo] = useState(false)
+  const [search, setSearch] = useState(false)
 
   function toggleAdd(){
     setAdd(!add)
@@ -231,6 +232,10 @@ function ProspectsHome(){
     setAddTo(!addTo)
   }
 
+  // const search = () => {
+  //   axios.get("/api/prospects/prospect/search")
+  // }
+
 
   return(
     <div className="prospects">
@@ -251,37 +256,41 @@ function ProspectsHome(){
                 <h4>My Prospects</h4>
               </div>
               <div className="search">
-                <input type="search" placeholder="Search"/>
+                <input type="search" placeholder="Search" />
                 <button onClick={toggleAdd} className="btn">Add Prospects</button>
               </div>
             </div>
 
-            <div className="prospects__container--sorter">
-              <div className={`prospects__container--sorter--card ${status === "all" ? "active" : ""}`} onClick={() => {getData(selectedList.name, selectedList.id);}}>
-                <h1 className="copy__para--medium">All</h1>
-                <p className="heading-1">{prospectCount.all}</p>
-              </div>
-              <div className={`prospects__container--sorter--card ${status === "not-contacted" ? "active" : ""}`} onClick={() => getProspectsByStatus("not-contacted")}>
-                <h1 className="copy__para--medium">Not Contacted</h1>
-                <p className="heading-1">{prospectCount.not_contacted}</p>
-              </div>
-              <div className={`prospects__container--sorter--card ${status === "bounced" ? "active" : ""}`} onClick={() => getProspectsByStatus("bounced")}>
-                <h1 className="copy__para--medium">Bounced</h1>
-                <p className="heading-1">{prospectCount.bounced}</p>
-              </div>
-              <div className={`prospects__container--sorter--card ${status === "replied" ? "active" : ""}`} onClick={() => getProspectsByStatus("replied")}>
-                <h1 className="copy__para--medium">Replied</h1>
-                <p className="heading-1">{prospectCount.replied}</p>
-              </div>
-              <div className={`prospects__container--sorter--card ${status === "unsubscribed" ? "active" : ""}`} onClick={() => getProspectsByStatus("unsubscribed")}>
-                <h1 className="copy__para--medium">Unsubscribed</h1>
-                <p className="heading-1">{prospectCount.unsubscribed}</p>
-              </div>
-              <div className={`prospects__container--sorter--card ${status === "not-replied" ? "active" : ""}`} onClick={() => getProspectsByStatus("not-replied")}>
-                <h1 className="copy__para--medium">Not Replied</h1>
-                <p className="heading-1">{prospectCount.not_replied}</p>
-              </div>
-            </div>
+            {
+              search ? null
+                  : 
+                <div className="prospects__container--sorter">
+                  <div className={`prospects__container--sorter--card ${status === "all" ? "active" : ""}`} onClick={() => {getData(selectedList.name, selectedList.id);}}>
+                    <h1 className="copy__para--medium">All</h1>
+                    <p className="heading-1">{prospectCount.all}</p>
+                  </div>
+                  <div className={`prospects__container--sorter--card ${status === "not-contacted" ? "active" : ""}`} onClick={() => getProspectsByStatus("not-contacted")}>
+                    <h1 className="copy__para--medium">Not Contacted</h1>
+                    <p className="heading-1">{prospectCount.not_contacted}</p>
+                  </div>
+                  <div className={`prospects__container--sorter--card ${status === "bounced" ? "active" : ""}`} onClick={() => getProspectsByStatus("bounced")}>
+                    <h1 className="copy__para--medium">Bounced</h1>
+                    <p className="heading-1">{prospectCount.bounced}</p>
+                  </div>
+                  <div className={`prospects__container--sorter--card ${status === "replied" ? "active" : ""}`} onClick={() => getProspectsByStatus("replied")}>
+                    <h1 className="copy__para--medium">Replied</h1>
+                    <p className="heading-1">{prospectCount.replied}</p>
+                  </div>
+                  <div className={`prospects__container--sorter--card ${status === "unsubscribed" ? "active" : ""}`} onClick={() => getProspectsByStatus("unsubscribed")}>
+                    <h1 className="copy__para--medium">Unsubscribed</h1>
+                    <p className="heading-1">{prospectCount.unsubscribed}</p>
+                  </div>
+                  <div className={`prospects__container--sorter--card ${status === "not-replied" ? "active" : ""}`} onClick={() => getProspectsByStatus("not-replied")}>
+                    <h1 className="copy__para--medium">Not Replied</h1>
+                    <p className="heading-1">{prospectCount.not_replied}</p>
+                  </div>
+                </div>
+            }
               {
                 loading ? 
                   <div className="prospects__container--actions loader">
@@ -324,17 +333,21 @@ function ProspectsHome(){
                     </div>
                   </div>
                 </div>
-                <div className="prospects__container--actions--page">
-                    <p className="copy__para--medium">Showing</p>
-                    <select onChange={(e) => setPageSize(e.target.value)}>
-                      <option defaultValue={pageSize === 10 ? 10 : ""} value="10">10</option>
-                      <option defaultValue={pageSize === 20 ? 20 : ""} value="20">20</option>
-                      <option defaultValue={pageSize === 30 ? 30 : ""} value="30">30</option>
-                      <option defaultValue={pageSize === 50 ? 50 : ""} value="50">50</option>
-                      <option defaultValue={pageSize === 100 ? 10 : ""} value="100">100</option>
-                    </select>
-                    <p className="copy__para--medium">/{totalElements}</p>
-                </div>
+                {
+                  search ? null
+                  : 
+                  <div className="prospects__container--actions--page">
+                      <p className="copy__para--medium">Showing</p>
+                      <select onChange={(e) => setPageSize(e.target.value)}>
+                        <option defaultValue={pageSize === 10 ? 10 : ""} value="10">10</option>
+                        <option defaultValue={pageSize === 20 ? 20 : ""} value="20">20</option>
+                        <option defaultValue={pageSize === 30 ? 30 : ""} value="30">30</option>
+                        <option defaultValue={pageSize === 50 ? 50 : ""} value="50">50</option>
+                        <option defaultValue={pageSize === 100 ? 10 : ""} value="100">100</option>
+                      </select>
+                      <p className="copy__para--medium">/{totalElements}</p>
+                  </div>
+                }
               </div>
 
               <div className="table__container">
@@ -380,11 +393,15 @@ function ProspectsHome(){
                 </table>
               </div>
 
-              <div className="add-from-existing__container--page-number">
-                <div className="add-from-existing__container--page-number--prev copy__para--medium" onClick={() => previousPage()}>Prev</div>
-                  <p className="add-from-existing__container--page-number--number copy__para--medium">{pageNumber + 1}</p>
-                  <div className="add-from-existing__container--page-number--next copy__para--medium" onClick={() => nextPage()}>Next</div>
-              </div>
+              {
+                search ? null 
+                :
+                <div className="add-from-existing__container--page-number">
+                  <div className="add-from-existing__container--page-number--prev copy__para--medium" onClick={() => previousPage()}>Prev</div>
+                    <p className="add-from-existing__container--page-number--number copy__para--medium">{pageNumber + 1}</p>
+                    <div className="add-from-existing__container--page-number--next copy__para--medium" onClick={() => nextPage()}>Next</div>
+                </div>
+              }
           </>
             }
           </div>

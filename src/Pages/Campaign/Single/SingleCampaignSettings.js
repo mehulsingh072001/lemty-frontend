@@ -142,6 +142,7 @@ function SingleCampaignSettings() {
       headers: headers
     }).then((res) => {
       setCampaign(res.data)
+      console.log(campaign)
     })
   }
 

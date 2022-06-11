@@ -10,6 +10,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 105em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 26.75em) {
+    html {
+      font-size: 40%; } }
 
 body {
   /* Total borders or paddings are not added to total height of an element */
@@ -625,11 +634,22 @@ body {
         justify-content: space-between;
         padding: 2rem 0;
         align-items: center;
-        border-bottom: 1px solid #e1e1e3; }
+        border-bottom: 1px solid #f5f5f7; }
         .campaign-settings__container--settings .timezone select {
           height: 32px;
           background-color: #ffffff;
           border: 1px solid #e1e1e3; }
+      .campaign-settings__container--settings .limit {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0;
+        align-items: center;
+        border-bottom: 1px solid #f5f5f7; }
+        .campaign-settings__container--settings .limit input {
+          height: 3.2rem;
+          padding: 0 .8rem;
+          border: 1px solid #e1e1e3;
+          border-radius: 4px; }
       .campaign-settings__container--settings .stop {
         display: flex;
         justify-content: space-between;

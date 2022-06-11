@@ -113,7 +113,14 @@ function Create(){
       )
     case 2:
       return(
-        <AddProspect nextStep={nextStep} prevStep={prevStep} campaignId={campaignId}/>
+        <AddProspect 
+          nextStep={nextStep} 
+          prevStep={prevStep} 
+          campaignId={campaignId} 
+          addStep={addStep} 
+          setAddStep={setAddStep}
+          saveExit={saveAndExitCampaign}
+        />
       )
     default:
       return progress

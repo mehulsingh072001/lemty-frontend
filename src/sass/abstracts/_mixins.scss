@@ -5,7 +5,7 @@
         @media(max-width: 90em) { @content }; //1440px
     }
     @if $breakpoint == small-laptop  {
-        @media(max-width: 80em) { @content }; //1280px
+        @media(max-width: 105em) { @content }; //1280px
     }
     @if $breakpoint == tab-land  {
         @media(max-width: 64em) { @content }; //1024px

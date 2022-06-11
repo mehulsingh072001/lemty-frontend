@@ -15,7 +15,7 @@ const AddProspect = (props) => {
       {campaignProspectAdd===true ? <CampaignAdd campaignId={props.campaignId}/> : null}
       <AppTopbar title={"Campaigns"}/>
       <div className="campaign-prospects__container">
-        <ProgressBar prevStep={props.prevStep} nextStep={props.nextStep} step={props.step}/>
+        <ProgressBar prevStep={props.prevStep} nextStep={props.nextStep} step={props.step} saveExit={props.saveExit}/>
         <div className="campaign-prospects__container--content">
           <button className="btn"  onClick={() => setCampaignProspectAdd(true)}>Add Prospects To Campaign</button>
         </div>
