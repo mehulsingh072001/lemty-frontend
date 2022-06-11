@@ -193,13 +193,11 @@ function SingleCampaignEmails() {
                       <td>
                         <div className="col-data__engagement">
                           {
-                          d.engagements.map((e, i) => 
-                            <div key={i} className="col-data__engagement--container">
+                            <div className="col-data__engagement--container">
                               <div className="col-data__engagement--container--item tooltip"><span className="tooltiptext">Reply</span></div>
                               <div className="col-data__engagement--container--item tooltip"><span className="tooltiptext">Click</span></div>
                               <div className="col-data__engagement--container--item tooltip"><span className="tooltiptext">Open</span></div>
                             </div>
-                           )
                           }
                         </div>
                       </td>

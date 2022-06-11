@@ -19,6 +19,7 @@ export const GlobalProvider = (props) => {
   const [progress, setProgress] = useState(0)
   const [reviewModal, setReviewModal] = useState(false)
   const [previewModal, setPreviewModal] = useState(false)
+  const [campaignNameCount, setCampaignNameCount] = useState(1)
 
   return(
     <div>
@@ -39,6 +40,7 @@ export const GlobalProvider = (props) => {
           emailEditor: [editor, setEditor],
           campaignBar: [progress, setProgress],
           review: [reviewModal, setReviewModal],
+          campaignName: [campaignNameCount, setCampaignNameCount],
           preview: [previewModal, setPreviewModal]
         }}
       >

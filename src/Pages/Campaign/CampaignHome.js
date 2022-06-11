@@ -16,9 +16,10 @@ const cookies = new Cookies()
 function CampaignsHome() {
   let navigate = useNavigate()
 
-  const {selectedCampaign, addProspectCampaign} = useContext(GlobalContext)
+  const {selectedCampaign, addProspectCampaign, campaignName} = useContext(GlobalContext)
   const [campaignProspectAdd, setCampaignProspectAdd] = addProspectCampaign
   const [showCampaigns, setShowCampaigns] = useState([])
+  const [campaignNameCount, setCampaignNameCount] = campaignName
   const [campaignId, setCampaignId] = selectedCampaign
   const [nameModal, setNameModal] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -69,6 +70,7 @@ function CampaignsHome() {
       if(res.status === 200){
         getData()
         openMenu(index)
+        setCampaignNameCount(campaignNameCount - 1)
       }
     })
   }

@@ -7,11 +7,8 @@ import {GlobalContext} from "../../GlobalProvider"
 
 const CampaignSettings = (props) => {
   const {campaign} = useContext(GlobalContext)
-  // const [selectedTimezone] = useState('America/Los_Angeles')
-  const [stop, setStop] = useState(true)
   const [campaignData, setCampaignData] = campaign
-  // const [limit] = useState(100)
-  // const [campaignName, setCampaignName] = useState("")
+  const [stop, setStop] = useState(true)
   const [timezones] = useState([
     'America/Los_Angeles',
     'Africa/Accra',
@@ -121,11 +118,6 @@ const CampaignSettings = (props) => {
     'Pacific/Kiritimati',
   ])
 
-  // useEffect(() => {
-  //   handleChange()
-  //  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
-
   const Timezones = timezones.map(Timezone => Timezone)
 
   function toggleSwitch(){
@@ -133,9 +125,6 @@ const CampaignSettings = (props) => {
     setCampaignData({...campaignData, campaignStop: !stop})
   }
 
-//   const handleChange = () => {
-//     setCampaignData({...campaignData, campaign_name: campaignName, campaignStop: stop, dailyLimit: limit, timezone: selectedTimezone})
-//   }
 
   return(
     <div className="campaign-settings">
@@ -153,13 +142,13 @@ const CampaignSettings = (props) => {
 
           <div className="timezone">
             <p className="copy__para--medium">Set Time Zone</p>
-            <select onChange={(e) => setCampaignData({...campaignData, timezone: timezones[e.target.value]})}>
+            <select defaultValue={campaignData.timezone} onChange={(e) => setCampaignData({...campaignData, timezone: timezones[e.target.value]})}>
               {Timezones.map((adress, key) => <option key={key} value={key}>{adress}</option>)}
             </select>
           </div>
 
           <div className="limit">
-            <p>Set Number of emails to be sent in a day</p>
+            <p className="copy__para--medium">Set Number of emails to be sent in a day</p>
             <input type="number" defaultValue={campaignData.dailyLimit} required onChange={(e) => setCampaignData({...campaignData, dailyLimit: e.target.value})}/>
           </div>
 

@@ -1,5 +1,7 @@
 import { useContext, useState, useEffect } from "react"
 import { GlobalContext } from "../../GlobalProvider"
+import axios from "axios"
+import Cookies from "universal-cookie";
 
 import AppSidebar from "../Sidebars/AppSidebar";
 import AppTopbar from "../Topbars/AppTopbar";
@@ -11,6 +13,7 @@ import DelayDropdown from "../DelayDropdown";
 import EditEditor from "../EditEditor";
 
 function CampaignSteps(props){
+  const cookies = new Cookies()
   const {emailEditor, campaign, step, selectedCampaign} = useContext(GlobalContext)
   const [editor, setEditor] = emailEditor
   const [campaignId, setCampaignId] = selectedCampaign
@@ -27,11 +30,29 @@ function CampaignSteps(props){
   const [edited, setEdited] = useState(false)
   const [step1, setStep1] = useState(false)
   const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  const [creds, setCreds] = useState([])
 
   useEffect(() => {
-    initialStep()
+    getCreds()
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+
+  const getCreds = () => {
+    const params = {
+      userId: cookies.get("userId")
+    }
+    const headers = {
+        "Authorization": `Bearer ${cookies.get('access_token')}`
+    }
+    axios.get(`/api/creds/`, {
+      params : params,
+      headers: headers
+    }).then((res) => {
+      setCreds(res.data)
+      initialStep()
+    })
+  }
 
   function toggleEditor(index){
     setEditor(!editor)
@@ -99,6 +120,7 @@ function CampaignSteps(props){
     }
     let newArr = [...addStep]
     addStep[currentIndex].mails.push(data)
+    addStep[currentIndex].whichEmail = creds[0]['email']
     setAddStep(newArr)
     checkr(currentIndex)
     setEmailAdded(!emailAdded)
@@ -260,7 +282,7 @@ function CampaignSteps(props){
              </>
             )}
         </div>
-      { modalOpen ? <StepSettingsModal toggler={toggleModal} addStep={addStep} index={currentIndex} edited={edited} setEdited={setEdited}/> : null}
+      { modalOpen ? <StepSettingsModal toggler={toggleModal} addStep={addStep} index={currentIndex} edited={edited} setEdited={setEdited} creds={creds}/> : null}
     </div>
   )
 }
