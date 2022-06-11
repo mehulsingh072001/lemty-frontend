@@ -32,7 +32,7 @@ function ProspectsHome(){
   const [createList, setCreateList] = useState(false)
   const [loading, setLoading] = useState(true)
   const [addTo, setAddTo] = useState(false)
-  const [search, setSearch] = useState(false)
+  const [search] = useState(false)
 
   function toggleAdd(){
     setAdd(!add)
