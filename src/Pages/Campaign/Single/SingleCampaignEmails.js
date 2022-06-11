@@ -190,17 +190,18 @@ function SingleCampaignEmails() {
                       <td><p className="col-data copy__para--medium">{d.toEmail}</p></td>
                       <td className="body"><div className="col-data copy__para--medium">{d.body}</div></td>
                       <td><p className="col-data copy__para--medium">#{d.step + 1}</p></td>
-                      <td>
-                        <div className="col-data__engagement">
-                          {
-                            <div className="col-data__engagement--container">
-                              <div className="col-data__engagement--container--item tooltip"><span className="tooltiptext">Reply</span></div>
-                              <div className="col-data__engagement--container--item tooltip"><span className="tooltiptext">Click</span></div>
-                              <div className="col-data__engagement--container--item tooltip"><span className="tooltiptext">Open</span></div>
+                      {
+                        status === "SENT" ? 
+                          <td>
+                            <div className="col-data__engagement">
+                              {
+                                <div className="col-data__engagement--container">
+                                </div>
+                              }
                             </div>
-                          }
-                        </div>
-                      </td>
+                          </td>
+                          : null
+                      }
                     </tr>
                   )}
                 </tbody>
