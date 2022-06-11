@@ -370,18 +370,20 @@ function ProspectsHome(){
                       <tr key={d.id}>
                         <td><input type="checkbox" value={d.id} checked={selectedProspects.includes(d.id)} onChange={handleSelectProspect}/></td>
                         <td><div className="col-data" onClick={() => {setSingleProspect(d); toggleProspectView()}}><span className="badge">{d.firstName.charAt(0).toUpperCase()}</span><p className=" prospectName copy__para--medium">{d.firstName} {d.lastName}</p></div></td>
-                        <td className="col-data">
-                          <button className={d.prospectEmail !== null ? "col-data btn-contact" : "col-data btn-contact--disabled"}>
-                            <i className="fas fa-envelope"></i>
-                              {/* {d.prospectEmail} */}
-                          </button>
-                          <button className={d.prospectLinkedinUrl !== null ? "col-data btn-contact" : "col-data btn-contact--disabled"}>
-                              <i className="fab fa-linkedin-in"></i>
-                              {d.prospectLinkedinUrl}
-                          </button>
-                          <button className={d.prospectLinkedinUrl !== null ? "col-data btn-contact" : "col-data btn-contact--disabled"}>
-                              {d.prospectMobileNumber}
-                          </button>
+                        <td >
+                          <div className="col-data">
+                            <button className={d.prospectEmail !== null ? "col-data btn-contact" : "col-data btn-contact--disabled"}>
+                              <i className="fas fa-envelope"></i>
+                                {/* {d.prospectEmail} */}
+                            </button>
+                            <button className={d.prospectLinkedinUrl !== null ? "col-data btn-contact" : "col-data btn-contact--disabled"}>
+                                <i className="fab fa-linkedin-in"></i>
+                                {d.prospectLinkedinUrl}
+                            </button>
+                            <button className={d.prospectLinkedinUrl !== null ? "col-data btn-contact" : "col-data btn-contact--disabled"}>
+                                {d.prospectMobileNumber}
+                            </button>
+                          </div>
                         </td>
                         <td><p className="col-data copy__para--medium">{d.prospectCompany !== null ? d.prospectCompany : "-"}</p></td>
                         <td><p className="col-data copy__para--medium">Campaign 1</p></td>
