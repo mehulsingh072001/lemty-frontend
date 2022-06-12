@@ -26,12 +26,22 @@ function CampaignsHome() {
 
   useEffect(() => {
     getData()
+    const closeMenuOnEsc = (e) => {
+      for(let i=0; i < showCampaigns.length; i++){
+        if(e.keyCode === 27){
+          let el = document.getElementsByClassName("menu")[i]
+          el.style.display = "none"
+        }
+      }
+    }
+    window.addEventListener("keydown", closeMenuOnEsc)
   }, [])
 
   function toggleAdd(id){
     setCampaignProspectAdd(!campaignProspectAdd)
     setCampaignId(id)
   }
+
 
   const openMenu = (index) => {
     let el = document.getElementsByClassName("menu")[index]

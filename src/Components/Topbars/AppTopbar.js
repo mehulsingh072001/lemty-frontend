@@ -9,7 +9,15 @@ function AppTopbar(props){
   const [user, setUser] = useState({})
   useEffect(() => {
     getUser()
+    const closeMenuOnEsc = (e) => {
+      if(e.keyCode === 27){
+        let el = document.getElementsByClassName("context-menu1")[0]
+        el.style.display = "none"
+      }
+    }
+    window.addEventListener("keydown", closeMenuOnEsc)
   }, [])
+
 
   const toggleMenu = () => {
     let el = document.getElementsByClassName("context-menu1")[0]

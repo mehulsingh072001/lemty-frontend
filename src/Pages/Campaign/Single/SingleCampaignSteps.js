@@ -28,6 +28,7 @@ function SingleCampaignSteps() {
   const [plainEmail, setPlainEmail] = useState("")
   const [editor, setEditor] = emailEditor
   const [emailAdded, setEmailAdded] = useState(false)
+  const [creds, setCreds] = useState([])
 
   const headers = {
       "Authorization": `Bearer ${cookies.get('access_token')}`
@@ -44,7 +45,24 @@ function SingleCampaignSteps() {
 
   useEffect(() => {
     getSteps()
+    getCreds()
   }, [getSteps])
+
+  const getCreds = () => {
+    const params = {
+      userId: cookies.get("userId")
+    }
+    const headers = {
+        "Authorization": `Bearer ${cookies.get('access_token')}`
+    }
+    axios.get(`/api/creds/`, {
+      params : params,
+      headers: headers
+    }).then((res) => {
+      setCreds(res.data)
+    })
+  }
+
 
 
   const discard = () => {
@@ -118,6 +136,7 @@ function SingleCampaignSteps() {
     arr[currentIndex].mails[mailIndex]['body'] = email_content
     arr[currentIndex].mails[mailIndex]['plainBody'] = plainEmail
     setSteps(arr)
+    setEdited(true)
   }
 
   const addStepBetween = (index) => {
@@ -264,7 +283,7 @@ function SingleCampaignSteps() {
             }
           </div>
       </div>
-      { modalOpen ? <StepSettingsModal toggler={toggleModal} index={currentIndex} addStep={steps} setEdited={setEdited} />: null}
+      { modalOpen ? <StepSettingsModal toggler={toggleModal} index={currentIndex} addStep={steps} setEdited={setEdited} creds={creds}/>: null}
     </div>
   )
 }

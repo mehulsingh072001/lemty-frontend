@@ -32,7 +32,7 @@ function ProspectsHome(){
   const [createList, setCreateList] = useState(false)
   const [loading, setLoading] = useState(true)
   const [addTo, setAddTo] = useState(false)
-  const [search] = useState(false)
+  const [search, setSearch] = useState(false)
 
   function toggleAdd(){
     setAdd(!add)
@@ -232,9 +232,29 @@ function ProspectsHome(){
     setAddTo(!addTo)
   }
 
-  // const search = () => {
-  //   axios.get("/api/prospects/prospect/search")
-  // }
+  const searchHandler = (e) => {
+    if(e.target.value === ""){
+      setSearch(false)
+      getData()
+    }
+    else{
+      setSearch(true)
+      const userId = cookies.get("userId")
+      const params = {
+        userId: userId,
+        keyword: e.target.value
+      }
+      const headers = {
+          "Authorization": `Bearer ${cookies.get('access_token')}`
+      }
+      axios.get("/api/prospects/prospect/search", {
+        headers: headers,
+        params: params
+      }).then((res) => {
+        setShowProspects(res.data)
+      })
+    }
+  }
 
 
   return(
@@ -256,7 +276,7 @@ function ProspectsHome(){
                 <h4>My Prospects</h4>
               </div>
               <div className="search">
-                <input type="search" placeholder="Search" />
+                <input type="search" placeholder="Search" onChange={(e) => searchHandler(e)}/>
                 <button onClick={toggleAdd} className="btn">Add Prospects</button>
               </div>
             </div>
