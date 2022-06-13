@@ -2545,15 +2545,17 @@ body {
           padding: .5rem .6rem;
           background-color: white;
           border: 1px solid #e1e1e3; }
+        .deliveribility-settings__container--content--card input {
+          height: 3.2rem;
+          padding: .5rem 1rem;
+          border: 1px solid #e1e1e3;
+          border-radius: 5px;
+          margin-right: 1rem; }
   .deliveribility-settings .field__container {
     display: grid;
     margin-right: 2rem; }
     .deliveribility-settings .field__container label {
       margin-bottom: .8rem; }
-    .deliveribility-settings .field__container input {
-      padding: .5rem 1rem;
-      border: 1px solid #e1e1e3;
-      border-radius: 5px; }
 
 .confirmation {
   display: grid;

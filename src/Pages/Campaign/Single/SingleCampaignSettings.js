@@ -18,6 +18,7 @@ function SingleCampaignSettings() {
   const [campaignProspectAdd] = addProspectCampaign
   const { id } = useParams()
   const [campaign, setCampaign] = useState({})
+  const [edited, setEdited] = useState(false)
   const timezones = [
     'America/Los_Angeles',
     'Africa/Accra',
@@ -75,6 +76,7 @@ function SingleCampaignSettings() {
     'Asia/Kabul',
     'Asia/Karachi',
     'Asia/Kathmandu',
+    'Asia/Kolkata',
     'Asia/Kuala_Lumpur',
     'Asia/Kuwait',
     'Asia/Manila',
@@ -137,17 +139,31 @@ function SingleCampaignSettings() {
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+
   const getCampaignSettings = () => {
     axios.get(`/api/campaigns/single/${id}`, {
       headers: headers
     }).then((res) => {
       setCampaign(res.data)
-      console.log(campaign)
     })
+  }
+
+  const updateCampaign = () => {
+    axios.put(`/api/campaigns/update/${id}`, campaign, {
+      headers: headers
+    }).then((res) => {
+      getCampaignSettings()
+    })
+  }
+
+  const discard = () => {
+    getCampaignSettings()
+    setEdited(false)
   }
 
   const toggleSwitch = () => {
     setCampaign({...campaign, campaignStop: !campaign.campaignStop})
+    setEdited(true)
   }
 
   return(
@@ -175,7 +191,7 @@ function SingleCampaignSettings() {
                   <h4 className="heading-4">Set Time Zone</h4>
                   <p className="copy__para--small u-margin-top-small">Delivery windows used in this Cadence will follow this time zone.</p>
                 </div>
-                <select value={campaign.timezone}>
+                <select value={campaign.timezone} onChange={(e) => {setCampaign({...campaign, timezone: e.target.value}); setEdited(true);}}>
                   {Timezones.map((adress, key) => <option key={key} value={adress}>{adress}</option>)}
                 </select>
               </div>
@@ -185,10 +201,19 @@ function SingleCampaignSettings() {
                   <h4 className="heading-4">Daily Email Limit</h4>
                   <p className="copy__para--small u-margin-top-small">Maximum number of emails to be sent in a day</p>
                 </div>
-                <input type="number" defaultValue={campaign.dailyLimit}/>
+                <input type="number" defaultValue={campaign.dailyLimit} onChange={(e) => {setCampaign({...campaign, dailyLimit: e.target.value}); setEdited(true)}}/>
               </div>
             </div>
           </div>
+            {
+              edited ? 
+            <div className="save-discard">
+              <button onClick={() => discard()} className="btn-sec">Discard</button>
+              <button onClick={() => updateCampaign()} className="btn">Save</button>
+            </div>
+              : 
+                null
+            }
       </div>
     </div>
   )

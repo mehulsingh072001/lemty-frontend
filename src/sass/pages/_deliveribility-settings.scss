@@ -73,6 +73,13 @@
                     background-color: white;
                     border: 1px solid $color_border_dark;
                 }
+                input{
+                    height: 3.2rem;
+                    padding: .5rem 1rem;
+                    border: 1px solid $color_border_dark;
+                    border-radius: 5px;
+                    margin-right: 1rem;
+                }
             }
         }
     }
@@ -81,11 +88,6 @@
         margin-right: 2rem;
         label{
             margin-bottom: .8rem;
-        }
-        input{
-            padding: .5rem 1rem;
-            border: 1px solid $color_border_dark;
-            border-radius: 5px;
         }
     }
 }

@@ -44,7 +44,7 @@ function DeliveribilitySettings(){
       }
     }).then((res) => {
       if(res.status === 200){
-        window.location.reload()
+        getSettings()
       }
     })
   }
@@ -64,6 +64,14 @@ function DeliveribilitySettings(){
         </div>
 
         <div className="deliveribility-settings__container--content">
+          <div className="deliveribility-settings__container--content--card" id="timezone">
+            <h4 className="heading-2">Daily email limit</h4>
+            <div className="row u-margin-top-medium">
+              <input type="number" onChange={(e) => setSettings({...settings, dailyEmailLimit: e.target.value})} defaultValue={settings.dailyEmailLimit}/>
+              <button className="btn" onClick={() => updateSettings()}>Save</button>
+            </div>
+          </div>
+
           <div className="deliveribility-settings__container--content--card" id="timezone">
             <h4 className="heading-2">Email Interval</h4>
             <div className="deliveribility-settings__container--content--card--head">

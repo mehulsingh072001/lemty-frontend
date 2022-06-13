@@ -41,7 +41,7 @@ function Create(){
       campaign_name: `Campaign ${campaignNameCount}`,
       timezone: "Asia/Kolkata",
       dailyLimit: 100,
-      stop: true
+      campaignStop: true
     }
     setCampaignData(campaign)
   }
