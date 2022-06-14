@@ -35,6 +35,7 @@ function CampaignsHome() {
       }
     }
     window.addEventListener("keydown", closeMenuOnEsc)
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function toggleAdd(id){
