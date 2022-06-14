@@ -2246,7 +2246,8 @@ body {
         background-color: white;
         border: 1px solid #e1e1e3;
         cursor: pointer;
-        padding: 0.6rem 1rem; }
+        padding: 0.6rem 1rem;
+        width: max-content; }
         .prospect-settings__container--sidebar .s-back i {
           margin-right: .5rem; }
       .prospect-settings__container--sidebar ul {
@@ -2261,6 +2262,42 @@ body {
           .prospect-settings__container--sidebar ul li:hover {
             color: #3a6598;
             border-bottom: 1px solid #3a6598; }
+    .prospect-settings__container--content {
+      margin: 2rem 3rem;
+      display: grid;
+      grid-gap: 1rem;
+      width: 100%; }
+      .prospect-settings__container--content--card {
+        border: 1px solid #e1e1e3;
+        background-color: white;
+        color: #393d55;
+        border-radius: 5px;
+        height: max-content;
+        padding: 2rem; }
+        .prospect-settings__container--content--card .row {
+          display: flex;
+          align-items: center;
+          margin: 3rem 0; }
+          .prospect-settings__container--content--card .row p {
+            margin-left: 1rem; }
+        .prospect-settings__container--content--card--head {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 80%; }
+          .prospect-settings__container--content--card--head .cta {
+            font-size: 1.4rem; }
+        .prospect-settings__container--content--card .points {
+          display: flex;
+          column-gap: 2rem;
+          align-items: center;
+          margin: 1rem 0; }
+          .prospect-settings__container--content--card .points input {
+            height: 3.2rem;
+            padding: .5rem 1rem;
+            border: 1px solid #e1e1e3;
+            border-radius: 5px;
+            margin-right: 1rem; }
 
 .settings {
   overflow: hidden;

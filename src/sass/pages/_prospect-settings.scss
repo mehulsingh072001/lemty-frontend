@@ -17,6 +17,7 @@
                 border: 1px solid #e1e1e3;
                 cursor: pointer;
                 padding: 0.6rem 1rem;
+                width: max-content;
                 i{
                     margin-right: .5rem;
                 }
@@ -33,6 +34,50 @@
                     &:hover{
                         color: #3a6598;
                         border-bottom: 1px solid #3a6598;
+                    }
+                }
+            }
+        }
+        &--content{
+            margin: 2rem 3rem;
+            display: grid;
+            grid-gap: 1rem;
+            width: 100%;
+            &--card{
+                border: 1px solid #e1e1e3;
+                background-color: white;
+                color: #393d55;
+                border-radius: 5px;
+                height: max-content;
+                padding: 2rem;
+                .row{
+                    display: flex;
+                    align-items: center;
+                    margin: 3rem 0;
+                    p{
+                        margin-left: 1rem;
+                    }
+                }
+                &--head{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 80%;
+                    .cta{
+                        font-size: 1.4rem;
+                    }
+                }
+                .points{
+                    display: flex;
+                    column-gap: 2rem;
+                    align-items: center;
+                    margin: 1rem 0;
+                    input{
+                        height: 3.2rem;
+                        padding: .5rem 1rem;
+                        border: 1px solid $color_border_dark;
+                        border-radius: 5px;
+                        margin-right: 1rem;
                     }
                 }
             }

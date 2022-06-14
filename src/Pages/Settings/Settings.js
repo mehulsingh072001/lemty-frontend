@@ -24,7 +24,7 @@ function Settings() {
             </div>
           </div>
           <div className="settings__container--card">
-            <h4 onClick={() => {console.log("hello")}} className="heading-2"><i className="fas fa-user"></i><span>Prospect Settings</span></h4>
+            <h4 onClick={() => navigate("/settings/prospect")} className="heading-2"><i className="fas fa-user"></i><span>Prospect Settings</span></h4>
             <div className="settings__container--card--container">
               <ul>
                 <li className="copy__para--medium" onClick={() => {console.log("prank")}}><p>Tags</p></li>
