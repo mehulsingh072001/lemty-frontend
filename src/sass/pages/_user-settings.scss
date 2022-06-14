@@ -79,6 +79,15 @@
                 }
             }
         }
+    .btn-delete{
+        color: white;
+        background-color: red;
+        display: flex;
+        justify-content: flex-end;
+        width: max-content;
+        padding: .5rem .8rem;
+        border-radius: 4px;
+    }
     }
     .field__container{
         display: grid;

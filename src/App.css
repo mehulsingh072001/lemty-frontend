@@ -2218,6 +2218,14 @@ body {
           padding: .5rem .6rem;
           background-color: white;
           border: 1px solid #e1e1e3; }
+    .user-settings__container .btn-delete {
+      color: white;
+      background-color: red;
+      display: flex;
+      justify-content: flex-end;
+      width: max-content;
+      padding: .5rem .8rem;
+      border-radius: 4px; }
   .user-settings .field__container {
     display: grid;
     margin-right: 2rem; }

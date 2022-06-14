@@ -156,6 +156,17 @@ function UserSettings(){
     })
   }
 
+  const deleteUser = () => {
+    axios.delete(`/api/users/delete/${cookies.get("userId")}`, {
+      headers:{
+        "Authorization": `Bearer ${cookies.get("access_token")}`
+      }
+    }).then((res) => {
+      navigate("/login")
+    })
+  }
+
+
   return(
     <div className="user-settings">
       <AppSidebar/>
@@ -195,9 +206,10 @@ function UserSettings(){
               {Timezones.map((adress, key) => <option key={key} value={key}>{adress}</option>)}
             </select>
           </div>
+          <button className="btn-delete" onClick={() => deleteUser()}>Delete</button>
         </div>
-      </div>
     </div>
+      </div>
   )
 }
 
