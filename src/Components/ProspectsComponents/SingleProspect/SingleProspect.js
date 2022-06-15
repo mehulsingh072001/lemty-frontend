@@ -1,9 +1,22 @@
+import { useState } from "react"
+import axios from "axios"
+import Cookies from "universal-cookie"
+
 import BasicFields from "./BasicFields"
 import AdditionalFields from "./AdditionalFields"
-import { useState } from "react"
 
-const SingleProspect = ({prospect, toggleProspectView}) => {
+const cookies = new Cookies()
+const SingleProspect = ({prospect, setProspect,toggleProspectView}) => {
   const [selectedFields, setSelectedFields] = useState("basic")
+
+  const updateProspect = () => {
+    axios.put(`/api/prospects/prospect/${prospect.id}`, prospect, {
+      headers: {
+        "Authorization": `Bearer ${cookies.get("access_token")}`
+      }
+    })
+  }
+
   return(
     <div className="single-prospect">
       <div className="single-prospect__modal">
@@ -48,10 +61,10 @@ const SingleProspect = ({prospect, toggleProspectView}) => {
 
             <div className="single-prospect__modal--container--fields--items">
               {
-                selectedFields === "basic" ? <BasicFields prospect={prospect}/> : null
+                selectedFields === "basic" ? <BasicFields prospect={prospect} setProspect={setProspect}/> : null
               }
               {
-                selectedFields === "additional" ? <AdditionalFields prospect={prospect}/> : null
+                selectedFields === "additional" ? <AdditionalFields prospect={prospect} setProspect={setProspect}/> : null
               }
             </div>
           </div>
@@ -64,7 +77,7 @@ const SingleProspect = ({prospect, toggleProspectView}) => {
 
         <section className="single-prospect__modal--bottombar">
           <button className="btn-sec">Cancel</button>
-          <button className="btn">Save</button>
+          <button className="btn" onClick={() => updateProspect()}>Save</button>
         </section>
       </div>
     </div>

@@ -1,9 +1,9 @@
-const BasicFields = ({prospect}) => {
+const BasicFields = ({prospect, setProspect}) => {
   return(
     <>
       <div className="item">
         <label htmlFor="">First Name</label>
-        <input type="text" value={prospect.firstName}/>
+        <input type="text" value={prospect.firstName} onChange={(e) => setProspect({...prospect, firstName: e.target.value})}/>
       </div>
       <div className="item">
         <label htmlFor="">Last Name</label>

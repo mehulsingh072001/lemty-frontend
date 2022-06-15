@@ -264,7 +264,7 @@ function ProspectsHome(){
       {addTo ? <AddToCampaign toggleAddTo={toggleAddTo} selectedProspects={selectedProspects} getData={getData}/> : null}
       <AppSidebar/>
       <AppTopbar title={"Prospects"}/>
-      { prospectView ? <SingleProspect prospect={singleProspect} toggleProspectView={toggleProspectView}/> : null}
+      { prospectView ? <SingleProspect prospect={singleProspect} setProspect={setSingleProspect} toggleProspectView={toggleProspectView}/> : null}
         <div className="prospects__container">
           <div className="prospects__container--sidebar">
             <ProspectSidebar toggleCreateList={toggleCreateList} selectedList={selectedList} setSelectedList={setSelectedList}/>
