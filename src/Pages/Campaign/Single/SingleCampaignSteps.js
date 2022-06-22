@@ -184,7 +184,7 @@ function SingleCampaignSteps() {
   
   return(
     <div className="single-campaign">
-      {campaignProspectAdd===true ? <CampaignAdd/> : null}
+      {campaignProspectAdd===true ? <CampaignAdd campaignId={id}/> : null}
       <AppSidebar/>
       {editor ? <EmailEditor currentIndex={currentIndex} handleCallback={addNewEmail} setPlainEmail={setPlainEmail}/> : null}
       {editEditor ? <EditEditor currentIndex={currentIndex} mailIndex={mailIndex} handleCallback={updateEmail} setPlainEmail={setPlainEmail} steps={steps} setEditEditor={setEditEditor}/> : null}

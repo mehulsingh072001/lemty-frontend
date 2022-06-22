@@ -129,7 +129,7 @@ function SingleCampaignProspects() {
 
   return(
     <div className="single-campaign">
-      {campaignProspectAdd===true ? <CampaignAdd/> : null}
+      {campaignProspectAdd===true ? <CampaignAdd campaignId={id}/> : null}
       <AppSidebar/>
       <AppTopbar title={"Campaign"}/>
       <div className="single-campaign__container">

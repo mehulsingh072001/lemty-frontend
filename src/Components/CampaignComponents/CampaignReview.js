@@ -38,13 +38,13 @@ function CampaignReview({selectedProspects, toggleHome, toggleReview}) {
         }
     }).then((res) => {
       if(res.status === 200){
-        toggleHome()
-        setAddStep([])
-        navigate(`/campaigns/${campaignId}/step`)
-        setProgress(0)
-        console.log(progress)
-        console.log(addStep)
-        setCampaignId("")
+        // toggleHome()
+        // setAddStep([])
+        // navigate(`/campaigns/${campaignId}/step`)
+        // setProgress(0)
+        // console.log(progress)
+        // console.log(addStep)
+        // setCampaignId("")
       }
     })
   }
