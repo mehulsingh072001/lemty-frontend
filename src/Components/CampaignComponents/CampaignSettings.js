@@ -142,7 +142,7 @@ const CampaignSettings = (props) => {
 
           <div className="timezone">
             <p className="copy__para--medium">Set Time Zone</p>
-            <select value={campaignData.timezone} onChange={(e) => setCampaignData({...campaignData, timezone: timezones[e.target.value]})}>
+            <select defaultValue={campaignData.timezone} onChange={(e) => setCampaignData({...campaignData, timezone: timezones[e.target.value]})}>
               {Timezones.map((adress, key) => <option key={key} value={key}>{adress}</option>)}
             </select>
           </div>
