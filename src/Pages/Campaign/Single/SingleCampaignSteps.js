@@ -34,19 +34,19 @@ function SingleCampaignSteps() {
       "Authorization": `Bearer ${cookies.get('access_token')}`
   }
 
-  const getSteps = useCallback(() => {
+  useEffect(() => {
+    getSteps()
+    getCreds()
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const getSteps = () => {
     axios.get(`/api/steps/${id}`, {
       headers: headers
     }).then((res) => {
       setSteps(res.data)
     })
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    getSteps()
-    getCreds()
-  }, [getSteps])
+  }
 
   const getCreds = () => {
     const params = {

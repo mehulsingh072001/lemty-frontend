@@ -5,8 +5,8 @@ const MapColumns = (props) => {
     <form action="" className="column__form">
 
       <div className="column__form--container">
-        <h1 className="heading-4">Csv Columns</h1>
         <h1 className="heading-4">Lemty Fields</h1>
+        <h1 className="heading-4">Csv Columns</h1>
       </div>
 
       <div className="column__form--container">
