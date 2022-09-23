@@ -9,7 +9,7 @@ import { useParams } from "react-router";
 import Cookies from 'universal-cookie';
 import ToggleSwitch from "../../../Components/ToggleSwitch";
 import { GlobalContext } from "../../../GlobalProvider";
-import { useContext, useCallback } from "react";
+import { useContext } from "react";
 import StepSettingsModal from "../../../Components/CampaignComponents/StepSettings/Modal";
 import EditEditor from "../../../Components/EditEditor";
 import EmailEditor from "../../../Components/EmailEditor";
